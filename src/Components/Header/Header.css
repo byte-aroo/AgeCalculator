@@ -1,0 +1,9 @@
+.header-title{
+   text-align: center;
+}
+.header-title p{
+    color: #403c57;
+    font-weight: bolder;
+    font-size: 3rem;
+    /* text-shadow: 2px 0px rgb(41, 41, 131) ; */
+}
