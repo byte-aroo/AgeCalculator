@@ -35,9 +35,9 @@ function App() {
     if (height > 200 && height < 300) {
       if (!isAdShown) {
         // if (!isAdShownOnce) {
-          setIsModalOpen(true);
-          setIsAdShown(true);
-          // localStorage.setItem("adShown", "true");
+        setIsModalOpen(true);
+        setIsAdShown(true);
+        // localStorage.setItem("adShown", "true");
         // }
       }
     }
@@ -51,7 +51,7 @@ function App() {
     setIsModalOpen(false);
   };
   return (
-    <div style={{  backgroundColor: 'rgb(184 231 247 / 24%)'}}>
+    <div style={{ backgroundColor: "rgb(184 231 247 / 24%)" }}>
       <div className="App">
         <Header />
 
@@ -64,9 +64,9 @@ function App() {
           </div>
         </div>
       </div>
-      <FooterFile/>
+      <FooterFile />
       <Modal
-        title="#Ad"
+        title="Developer"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
@@ -75,11 +75,7 @@ function App() {
       >
         {/* <div className="footer"> */}
         <a href="https://www.linkedin.com/company/bytearoo/">
-          <img
-            className="modal-logo"
-            src="/bytearoo-logo.png"
-            alt="logo"
-          />
+          <img className="modal-logo" src="/bytearoo-logo.png" alt="logo" />
         </a>
         <div className="modal-text">
           <p>
@@ -99,7 +95,7 @@ function App() {
             </p>
           </p>
         </div>
-      {/* </div> */}
+        {/* </div> */}
       </Modal>
     </div>
   );
