@@ -75,7 +75,7 @@ function App() {
       >
         {/* <div className="footer"> */}
         <a href="https://www.linkedin.com/company/bytearoo/">
-          <img className="modal-logo" src="/bytearoo-logo.png" alt="logo" />
+          <img className="modal-logo" src="./bytearoo-logo.png" alt="logo" />
         </a>
         <div className="modal-text">
           <p>
