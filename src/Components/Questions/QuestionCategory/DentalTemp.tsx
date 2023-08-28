@@ -41,7 +41,7 @@ const DentalTemp = () => {
 
   return (
     <div>
-      <Card className="category-card" style={{ width: "95%", margin: "auto", marginTop: "1%" }}>
+      <Card className="category-card" style={{ width: "95%", margin: "auto", marginTop: "1%" ,backgroundColor:'#b8e7f7'}}>
         <Card.Body>
           <Card.Title className="card-title" style={{ fontSize: "2rem" }}>
             Dental Examination
