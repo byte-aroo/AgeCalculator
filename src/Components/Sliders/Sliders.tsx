@@ -30,7 +30,7 @@ const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
     setReddySliderValue(range.R);
     setSwapnilSliderValue(range.S);
   }
-console.log()
+
   return (
     <div className="sliders-wrapper">
       <p>The age range of the patient according to different authors</p>
@@ -47,7 +47,7 @@ console.log()
             <Slider
               range
               value={agarwalSliderValue?agarwalSliderValue:[0,0]}
-              tooltip={{ placement: "bottom" }}
+              tooltip={{ open:true,placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>
@@ -65,7 +65,7 @@ console.log()
             <Slider
               range
               value={mukherjeeSliderValue?mukherjeeSliderValue:[0,0]}
-              tooltip={{ placement: "bottom" }}
+              tooltip={{ open:true,placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>
@@ -83,7 +83,7 @@ console.log()
             <Slider
               range
               value={reddySliderValue?reddySliderValue:[0,0]}
-              tooltip={{ placement: "bottom" }}
+              tooltip={{open:true, placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>
@@ -99,7 +99,7 @@ console.log()
             <Slider
               range
               value={nanddySliderValue?nanddySliderValue:[0,0]}
-              tooltip={{ placement: "bottom" }}
+              tooltip={{ open:true,placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>

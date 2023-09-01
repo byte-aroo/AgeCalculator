@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import {BsCaretRightFill} from 'react-icons/bs'
-const ElbowQues = () => {
+const ElbowQues = (props:any) => {
   const questions = [
     {
       question: "Upper end of radius",
@@ -30,6 +30,9 @@ const ElbowQues = () => {
     
   ];
   useEffect(() => {
+    if(props.reset){
+      setAnswers(Array(questions.length).fill(null))
+    }
     const loggedAnswers: any = sessionStorage.getItem("elbow" || {});
 
     if (loggedAnswers) {

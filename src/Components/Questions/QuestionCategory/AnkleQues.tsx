@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { BsCaretRightFill } from "react-icons/bs";
-const AnkleQues = () => {
+const AnkleQues = (props:any) => {
   const questions = [
     {
       question: "Lower end of fibula",
@@ -21,6 +21,9 @@ const AnkleQues = () => {
     },
   ];
   useEffect(() => {
+    if(props.reset){
+      setAnswers(Array(questions.length).fill(null))
+    }
     const loggedAnswers: any = sessionStorage.getItem("ankle" || {});
    
     if (loggedAnswers) {

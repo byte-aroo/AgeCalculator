@@ -12,6 +12,7 @@ import { Card } from "react-bootstrap";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [isFormOpen,setIsFormOpen]=useState(false)
+  const [reset,setReset]=useState(false)
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [isAdShown, setIsAdShown] = useState(false);
   useEffect(()=>{
@@ -82,6 +83,7 @@ function App() {
   };
   function resetAll() {
     sessionStorage.clear();
+    setReset(true)
     // window.location.reload();
   }
   return (
@@ -91,7 +93,7 @@ function App() {
 
         <div className="row">
           <div className="column left">
-            <Questions />
+            <Questions reset={reset}/>
           </div>
           <div className="column right">
             <Sliders />

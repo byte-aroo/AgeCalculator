@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import {BsCaretRightFill} from 'react-icons/bs'
-const DentalPerm = () => {
+const DentalPerm = (props:any) => {
   const questions = [
     {
       question: "1st molar",
@@ -37,6 +37,9 @@ const DentalPerm = () => {
       },
   ];
   useEffect(() => {
+    if(props.reset){
+      setAnswers(Array(questions.length).fill(null))
+    }
     const loggedAnswers: any = sessionStorage.getItem("dentalPerm" || {});
   
     if (loggedAnswers) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import {BsCaretRightFill} from 'react-icons/bs'
-const HipQues = () => {
+const HipQues = (props:any) => {
   const questions = [
     {
       question: "Iliac Crest",
@@ -30,6 +30,9 @@ const HipQues = () => {
     
   ];
   useEffect(() => {
+    if(props.reset){
+      setAnswers(Array(questions.length).fill(null))
+    }
     const loggedAnswers: any = sessionStorage.getItem("hip" || {});
   
     if (loggedAnswers) {

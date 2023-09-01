@@ -10,7 +10,7 @@ import AnkleQues from "./QuestionCategory/AnkleQues";
 import DentalTemp from "./QuestionCategory/DentalTemp";
 import DentalPerm from "./QuestionCategory/DentalPerm";
 
-const Questions = () => {
+const Questions = (props:any) => {
   const [currentIndex, setCurrentIndex] = useState<any>(0);
 
   const itemList = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -29,23 +29,23 @@ const Questions = () => {
     <div className="questions-wrapper">
       <div className="questions-card">
         {currentIndex === 0 ? (
-          <ShoulderQues />
+          <ShoulderQues reset={props.reset}/>
         ) : currentIndex === 1 ? (
-          <ElbowQues />
+          <ElbowQues reset={props.reset}/>
         ) : currentIndex === 2 ? (
-          <WristQues />
+          <WristQues reset={props.reset}/>
         ) : currentIndex === 3 ? (
-          <HipQues />
+          <HipQues reset={props.reset}/>
         ) : currentIndex === 4 ? (
-          <KneeQues />
+          <KneeQues reset={props.reset}/>
         ) : currentIndex === 5 ? (
-          <AnkleQues />
+          <AnkleQues reset={props.reset}/>
         ) : currentIndex === 6 ? (
-          <DentalTemp />
+          <DentalTemp reset={props.reset}/>
         ) : currentIndex === 7 ? (
-          <DentalPerm />
+          <DentalPerm reset={props.reset}/>
         ) : (
-          <ShoulderQues />
+          <ShoulderQues reset={props.reset}/>
         )}
       </div>
 
