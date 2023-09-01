@@ -11,7 +11,7 @@ const FooterFile = () => {
       >
         <div className="footer">
           <a href="https://www.linkedin.com/company/bytearoo/">
-            <img className="footer-logo" src="./bytearoo-logo.png" alt="logo" />
+            <img className="footer-logo" src={`${process.env.PUBLIC_URL}/logo/bytearoo-logo.png`} alt="logo" />
           </a>
           <div className="footer-text">
             <p>
@@ -20,6 +20,9 @@ const FooterFile = () => {
             <p className="footer-text-connect">
               {" "}
               <b>To Connect : </b>
+              <p>
+                <b>Website:</b> www.bytearoo.com
+              </p>
               <p>
                 <b>LinkedIn:</b> https://www.linkedin.com/company/bytearoo/
               </p>

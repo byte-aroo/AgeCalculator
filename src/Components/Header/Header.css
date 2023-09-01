@@ -7,3 +7,17 @@
     font-size: 3rem;
     /* text-shadow: 2px 0px rgb(41, 41, 131) ; */
 }
+.team-info-heading{
+
+    /* width: fit-content; */
+   margin-left: 80%;
+   margin-top: -4%;
+   margin-bottom: 4%;
+}
+.team-info-btn{
+    border: none;
+    background:none;
+    /* background-color:rgb(184 231 247 / 24%); */
+    color: blue;
+    text-decoration: underline;
+}

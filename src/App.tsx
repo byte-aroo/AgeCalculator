@@ -7,41 +7,58 @@ import Sliders from "./Components/Sliders/Sliders";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FooterFile from "./Components/Footer/FooterFile";
 import { Modal } from "antd";
+import { Card } from "react-bootstrap";
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [isAdShown, setIsAdShown] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPosition = window.scrollY;
-      if (window.scrollY > 80) {
-        if (currentScrollPosition > prevScrollPosition) {
-          showModal(window.scrollY);
-        }
-      }
-      setPrevScrollPosition(currentScrollPosition);
-    };
+  const resourceTeam = [
+    {
+      id: "arijit",
+      name: "Dr Arijit Dutta",
+      email: "arijitdutta@gmail.com",
+      phone: "1234567890",
+    },
+    {
+      id: "darshan",
+      name: "Dr Darshan Galoria",
+      email: "darshangaloria@gmail.com",
+      phone: "1234567890",
+    },
+    {
+      id: "dhara",
+      name: "Dr Dhara D. Goswami",
+      email: "dharadgoswami@gmail.com",
+      phone: "1234567890",
+    },
+    {
+      id: "pradip",
+      name: "Dr Pradip Rana",
+      email: "pradiprana@gmail.com",
+      phone: "1234567890",
+    },
+    {
+      id: "srushti",
+      name: "Dr Srushti Shukla",
+      email: "srushtishukla@gmail.com",
+      phone: "1234567890",
+    },
+  ];
 
-    window.addEventListener("scroll", handleScroll);
+  // const showModal = (height: any) => {
+  //   const isAdShownOnce = localStorage.getItem("adShown" || {});
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPosition]);
-  const showModal = (height: any) => {
-    const isAdShownOnce = localStorage.getItem("adShown" || {});
-
-    if (height > 200 && height < 300) {
-      if (!isAdShown) {
-        // if (!isAdShownOnce) {
-        setIsModalOpen(true);
-        setIsAdShown(true);
-        // localStorage.setItem("adShown", "true");
-        // }
-      }
-    }
-  };
+  //   if (height > 200 && height < 300) {
+  //     if (!isAdShown) {
+  //       // if (!isAdShownOnce) {
+  //       setIsModalOpen(true);
+  //       setIsAdShown(true);
+  //       // localStorage.setItem("adShown", "true");
+  //       // }
+  //     }
+  //   }
+  // };
 
   const handleOk = () => {
     setIsModalOpen(false);
@@ -50,10 +67,14 @@ function App() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  function resetAll(){
+    sessionStorage.clear()
+    window.location.reload()
+  }
   return (
     <div style={{ backgroundColor: "rgb(184 231 247 / 24%)" }}>
       <div className="App">
-        <Header />
+        <Header setIsModalOpen={setIsModalOpen} />
 
         <div className="row">
           <div className="column left">
@@ -63,42 +84,93 @@ function App() {
             <Sliders />
           </div>
         </div>
+        <button className="reset-all" onClick={resetAll}>Reset</button>
       </div>
       <FooterFile />
       <Modal
-        title="Developer"
+        title="Concept and Resource Team"
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
         footer={null}
         className="ad-modal"
+        width="fit-content"
       >
-        {/* <div className="footer"> */}
-        <a href="https://www.linkedin.com/company/bytearoo/">
-          <img className="modal-logo" src="./bytearoo-logo.png" alt="logo" />
-        </a>
-        <div className="modal-text">
-          <p>
-            <b>This page is maintained and developed by ByteAroo.</b>
-          </p>
-          <p className="text-connect">
-            {" "}
-            <b>To Connect : </b>
-            <p>
-              <b>LinkedIn:</b> https://www.linkedin.com/company/bytearoo/
-            </p>
-            <p>
-              <b>Email:</b> bytearoo@gmail.com
-            </p>
-            <p>
-              <b>WhatsApp:</b> +91 6375-874079
-            </p>
-          </p>
+        <div className="resource-team">
+          {resourceTeam.slice(0,3).map((user: any) => (
+            <>
+              <Card className="info-card" style={{ width: "10rem",border:'none' }}>
+                <Card.Img
+                  variant="top"
+                  className="info-card-img"
+                  src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
+                />
+                <div className="info-details">
+                  <p className="info-card-name">
+                    <b>{user.name}</b>
+                  </p>
+
+                  <p className="info-card-phone">
+                    <b>Phone:</b> {user.phone}
+                  </p>
+                  <p className="info-card-email">
+                    <b>Email:</b> {user.email}
+                  </p>
+                </div>
+              </Card>
+            </>
+          ))}
         </div>
-        {/* </div> */}
+        <div className="rest-resource-team">
+          {resourceTeam.slice(3).map((user: any) => (
+            <>
+              <Card className="info-card" style={{ width: "10rem",border:'none' }}>
+                <Card.Img
+                  variant="top"
+                  className="info-card-img"
+                  src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
+                />
+                <div className="info-details">
+                  <p className="info-card-name">
+                    <b>{user.name}</b>
+                  </p>
+
+                  <p className="info-card-phone">
+                    <b>Phone:</b> {user.phone}
+                  </p>
+                  <p className="info-card-email">
+                    <b>Email:</b> {user.email}
+                  </p>
+                </div>
+              </Card>
+            </>
+          ))}
+        </div>
       </Modal>
     </div>
   );
 }
 
 export default App;
+
+// <a href="https://www.linkedin.com/company/bytearoo/">
+// <img className="modal-logo" src="/logo/bytearoo-logo.png" alt="logo" />
+// </a>
+// <div className="modal-text">
+// <p>
+//   <b>This page is maintained and developed by ByteAroo.</b>
+// </p>
+// <p className="text-connect">
+//   {" "}
+//   <b>To Connect : </b>
+//   <p>
+//     <b>LinkedIn:</b> https://www.linkedin.com/company/bytearoo/
+//   </p>
+//   <p>
+//     <b>Email:</b> bytearoo@gmail.com
+//   </p>
+//   <p>
+//     <b>WhatsApp:</b> +91 6375-874079
+//   </p>
+// </p>
+// </div>
