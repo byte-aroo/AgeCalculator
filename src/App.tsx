@@ -11,8 +11,18 @@ import { Card } from "react-bootstrap";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isFormOpen,setIsFormOpen]=useState(false)
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [isAdShown, setIsAdShown] = useState(false);
+  useEffect(()=>{
+    setTimeout(()=>{
+      if(!isFormOpen){
+        setIsFormOpen(true)
+      }
+  
+    },5000)
+  },[])
+  
   const resourceTeam = [
     {
       id: "arijit",
@@ -67,9 +77,12 @@ function App() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  function resetAll(){
-    sessionStorage.clear()
-    window.location.reload()
+  const handleFormCancel = () => {
+    setIsFormOpen(false);
+  };
+  function resetAll() {
+    sessionStorage.clear();
+    // window.location.reload();
   }
   return (
     <div style={{ backgroundColor: "rgb(184 231 247 / 24%)" }}>
@@ -84,7 +97,9 @@ function App() {
             <Sliders />
           </div>
         </div>
-        <button className="reset-all" onClick={resetAll}>Reset</button>
+        <button className="reset-all" onClick={resetAll}>
+          Reset
+        </button>
       </div>
       <FooterFile />
       <Modal
@@ -95,57 +110,85 @@ function App() {
         footer={null}
         className="ad-modal"
         width="fit-content"
+        style={{ overflow: "hidden" }}
       >
-        <div className="resource-team">
-          {resourceTeam.slice(0,3).map((user: any) => (
-            <>
-              <Card className="info-card" style={{ width: "10rem",border:'none' }}>
-                <Card.Img
-                  variant="top"
-                  className="info-card-img"
-                  src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
-                />
-                <div className="info-details">
-                  <p className="info-card-name">
-                    <b>{user.name}</b>
-                  </p>
+        <div className="resource-team-wrapper">
+          <div className="resource-team">
+            {resourceTeam.slice(0, 3).map((user: any) => (
+              <>
+                <Card
+                  className="info-card"
+                  style={{ width: "10rem", border: "none" }}
+                >
+                  <Card.Img
+                    variant="top"
+                    className="info-card-img"
+                    src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
+                  />
+                  <div className="info-details">
+                    <p className="info-card-name">
+                      <b>{user.name}</b>
+                    </p>
 
-                  <p className="info-card-phone">
-                    <b>Phone:</b> {user.phone}
-                  </p>
-                  <p className="info-card-email">
-                    <b>Email:</b> {user.email}
-                  </p>
-                </div>
-              </Card>
-            </>
-          ))}
-        </div>
-        <div className="rest-resource-team">
-          {resourceTeam.slice(3).map((user: any) => (
-            <>
-              <Card className="info-card" style={{ width: "10rem",border:'none' }}>
-                <Card.Img
-                  variant="top"
-                  className="info-card-img"
-                  src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
-                />
-                <div className="info-details">
-                  <p className="info-card-name">
-                    <b>{user.name}</b>
-                  </p>
+                    <p className="info-card-phone">
+                      <b>Phone:</b> {user.phone}
+                    </p>
+                    <p className="info-card-email">
+                      <b>Email:</b> {user.email}
+                    </p>
+                  </div>
+                </Card>
+              </>
+            ))}
+          </div>
+          <div className="rest-resource-team">
+            {resourceTeam.slice(3).map((user: any) => (
+              <>
+                <Card
+                  className="info-card"
+                  style={{ width: "10rem", border: "none" }}
+                >
+                  <Card.Img
+                    variant="top"
+                    className="info-card-img"
+                    src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
+                  />
+                  <div className="info-details">
+                    <p className="info-card-name">
+                      <b>{user.name}</b>
+                    </p>
 
-                  <p className="info-card-phone">
-                    <b>Phone:</b> {user.phone}
-                  </p>
-                  <p className="info-card-email">
-                    <b>Email:</b> {user.email}
-                  </p>
-                </div>
-              </Card>
-            </>
-          ))}
+                    <p className="info-card-phone">
+                      <b>Phone:</b> {user.phone}
+                    </p>
+                    <p className="info-card-email">
+                      <b>Email:</b> {user.email}
+                    </p>
+                  </div>
+                </Card>
+              </>
+            ))}
+          </div>
+          <button className="inquiry-form" onClick={()=>setIsFormOpen(true)}>Inquiry Form</button>
         </div>
+      </Modal>
+      <Modal
+        title="Inquiry Form"
+        open={isFormOpen}
+        onOk={handleOk}
+        onCancel={handleFormCancel}
+        footer={null}
+        className="form-modal"
+        // width="max-content"
+        // style={{ overflow: "hidden" }}
+      >
+        <iframe
+          src="https://forms.gle/jWtTMg3XVXsG7zuY7"
+          className="google-form"
+          name="myIFrame"
+          style={{ height:'90vh'}}
+          
+        ></iframe>
       </Modal>
     </div>
   );

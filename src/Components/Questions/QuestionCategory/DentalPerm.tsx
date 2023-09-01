@@ -44,6 +44,7 @@ const DentalPerm = () => {
       getDentalPermRange(loggedAnswers);
     }
   }, [sessionStorage.getItem("dentalPerm")]);
+  
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
   const handleOptionChange = (questionIndex: any, optionIndex: any,option:any) => {
     const newAnswers:any = [...answers];
