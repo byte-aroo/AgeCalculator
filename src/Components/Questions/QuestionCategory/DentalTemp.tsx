@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { BsCaretRightFill } from "react-icons/bs";
+import { getAnswersRange } from "../answers";
 const DentalTemp = (props:any) => {
   const questions = [
     {
@@ -40,7 +41,7 @@ const DentalTemp = (props:any) => {
 
     if (loggedAnswers) {
       setAnswers(loggedAnswers.split(","));
-      getDentalTempRange(loggedAnswers);
+      getAnswersRange()
     }
   }, [sessionStorage.getItem("dentalTemp")]);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
@@ -54,98 +55,13 @@ const DentalTemp = (props:any) => {
     setAnswers(newAnswers);
     sessionStorage.setItem("dentalTemp", newAnswers);
   };
-  function getDentalTempRange(chosenAnswers: any) {
-    const answers = chosenAnswers.split(",");
-
-    if (answers[0]) {
-      if (answers[0] === "Appeared") {
-        sessionStorage.setItem("agarwalMin", "6");
-
-        sessionStorage.setItem("mukherjeeMin", "6");
-
-        sessionStorage.setItem("reddyMin", "6");
-        sessionStorage.setItem("nanddylMin", "5");
-        sessionStorage.setItem("swapnilMin", "6");
-    
-      }
-    }
-    if (answers[1]) {
-      if (answers[1] === "Appeared") {
-        sessionStorage.setItem("agarwalMin", "8");
-
-        sessionStorage.setItem("mukherjeeMin", "7");
-
-        sessionStorage.setItem("reddyMin", "7");
-        sessionStorage.setItem("nanddylMin", "6");
-        sessionStorage.setItem("swapnilMin", "7");
-    
-      }
-    }
-    if (answers[2]) {
-      if (answers[2] === "Appeared") {
-        sessionStorage.setItem("agarwalMin", "10");
-
-        sessionStorage.setItem("mukherjeeMin", "9");
-
-        sessionStorage.setItem("reddyMin", "7");
-        sessionStorage.setItem("nanddylMin", "7");
-        sessionStorage.setItem("swapnilMin", "7");
-    
-      }
-    }
-    if (answers[3]) {
-      if (answers[3] === "Appeared") {
-        sessionStorage.setItem("agarwalMin", "12");
-
-        sessionStorage.setItem("mukherjeeMin", "10");
-
-        sessionStorage.setItem("reddyMin", "10");
-        sessionStorage.setItem("nanddylMin", "8");
-        sessionStorage.setItem("swapnilMin", "10");
-    
-      }
-    }
-    if (answers[4]) {
-      if (answers[4] === "Appeared") {
-        sessionStorage.setItem("agarwalMin", "14");
-
-        sessionStorage.setItem("mukherjeeMin", "12");
-
-        sessionStorage.setItem("reddyMin", "12");
-        sessionStorage.setItem("nanddylMin", "1");
-        sessionStorage.setItem("swapnilMin", "12");
-    
-      }
-    }if (answers[5]) {
-      if (answers[5] === "Appeared") {
-        sessionStorage.setItem("agarwalMin", "18");
-
-        sessionStorage.setItem("mukherjeeMin", "17");
-
-        sessionStorage.setItem("reddyMin", "17");
-        sessionStorage.setItem("nanddylMin", "1.5");
-        sessionStorage.setItem("swapnilMin", "14");
-    
-      }
-    }
-    if (answers[6]) {
-      if (answers[6] === "Appeared") {
-        sessionStorage.setItem("agarwalMin", "24");
-
-        sessionStorage.setItem("mukherjeeMin", "20");
-
-        sessionStorage.setItem("reddyMin", "20");
-        sessionStorage.setItem("nanddylMin", "20");
-        sessionStorage.setItem("swapnilMin", "20");
-    
-      }
-    }
-    
-  }
+  
   function optionReset(questionIndex: any, option: any) {
     const newAnswers: any = [...answers];
     newAnswers[questionIndex] = option;
     setAnswers(newAnswers);
+    sessionStorage.setItem("dentalTemp", newAnswers);
+    getAnswersRange()
   }
   return (
     <div>

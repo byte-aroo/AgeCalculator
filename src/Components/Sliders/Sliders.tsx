@@ -11,24 +11,18 @@ const Sliders = () => {
   const [swapnilSliderValue, setSwapnilSliderValue] = useState<any>([]);
 const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
   useEffect(() => {
-    setAgarwalSliderValue([Number(sessionStorage.getItem('agarwalMin')),Number(sessionStorage.getItem('agarwalMax'))])
-   
-    setMukherjeeSliderValue([Number(sessionStorage.getItem('mukherjeeMin')),Number(sessionStorage.getItem('mukherjeeMax'))])
-
-    setReddySliderValue([Number(sessionStorage.getItem('reddyMin')),Number(sessionStorage.getItem('reddyMax'))])
-    // let range = sessionStorage.getItem("sliders" || {});
-    setSwapnilSliderValue([Number(sessionStorage.getItem('swapnilMin')),Number(sessionStorage.getItem('swapnilMax'))])
-    setNanddySliderValue([Number(sessionStorage.getItem('nanddyMin')),Number(sessionStorage.getItem('nanddyMax'))])
-    // if (range) {
-    //   assignRanges(JSON.parse(range));
-    // }
+    const range=sessionStorage.getItem("answers")
+    if (range) {
+      assignRanges(JSON.parse(range));
+    }
   });
 
   function assignRanges(range: any) {
-    setAgarwalSliderValue(range.A);
-    setMukherjeeSliderValue(range.M);
-    setReddySliderValue(range.R);
-    setSwapnilSliderValue(range.S);
+    setAgarwalSliderValue([range.agarwalMin,range.agarwalMax]);
+    setMukherjeeSliderValue([range.mukherjeeMin,range.mukherjeeMax]);
+    setReddySliderValue([range.reddyMin,range.reddyMax]);
+    setSwapnilSliderValue([range.swapnilMin,range.swapnilMax]);
+    setNanddySliderValue([range.nanddyMin,range.nanddyMax]);
   }
 
   return (
@@ -84,6 +78,22 @@ const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
               range
               value={reddySliderValue?reddySliderValue:[0,0]}
               tooltip={{open:true, placement: "bottom" }}
+            />
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card
+        className="slider-card"
+        style={{ width: "26rem", backgroundColor: "#f1f1f2" }}
+      >
+        <Card.Body>
+          <Card.Title>Swapnil Sir </Card.Title>
+
+          <Card.Text>
+            <Slider
+              range
+              value={swapnilSliderValue?swapnilSliderValue:[0,0]}
+              tooltip={{ open:true,placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>

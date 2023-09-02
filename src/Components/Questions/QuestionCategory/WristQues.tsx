@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { BsCaretRightFill } from "react-icons/bs";
+import { getAnswersRange } from "../answers";
 const WristQues = (props:any) => {
   const questions = [
     {
@@ -12,38 +13,35 @@ const WristQues = (props:any) => {
       options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
     {
-      question: "Carpel Bone",
-    },
-    {
-      question: "1st Carpel bone",
+      question: "1st Carpel bone (Capitate)",
       options: ["Yes", "No"],
     },
     {
-      question: "2nd Carpel bone",
+      question: "2nd Carpel bone (Hamate)",
       options: ["Yes", "No"],
     },
     {
-      question: "3rd Carpel bone",
+      question: "3rd Carpel bone (Triquetral)",
       options: ["Yes", "No"],
     },
     {
-      question: "4th Carpel bone",
+      question: "4th Carpel bone (Lunate)",
       options: ["Yes", "No"],
     },
     {
-      question: "5th Carpel bone",
+      question: "5th Carpel bone (Scaphoid)",
       options: ["Yes", "No"],
     },
     {
-      question: "6th Carpel bone",
+      question: "6th Carpel bone (Trapezium)",
       options: ["Yes", "No"],
     },
     {
-      question: "7th Carpel bone",
+      question: "7th Carpel bone (Trapezoid)",
       options: ["Yes", "No"],
     },
     {
-      question: "8th Carpel bone",
+      question: "8th Carpel bone (Pisiform)",
       options: ["Yes", "No"],
     },
   ];
@@ -54,7 +52,7 @@ const WristQues = (props:any) => {
     const loggedAnswers: any = sessionStorage.getItem("wrist" || {});
     if (loggedAnswers) {
       setAnswers(loggedAnswers.split(","));
-      getWristRange(loggedAnswers);
+      getAnswersRange();
     }
   }, [sessionStorage.getItem("wrist")]);
 
@@ -65,156 +63,13 @@ const WristQues = (props:any) => {
     setAnswers(newAnswers);
     sessionStorage.setItem("wrist", newAnswers);
   };
-  function getWristRange(chosenAnswers: any) {
-    const answers = chosenAnswers.split(",");
-
-    if (answers[0]) {
-      if (answers[0] === "Not appeared") {
-        sessionStorage.setItem("agarwalMax", "2");
-        sessionStorage.setItem("mukherjeeMax", "1");
-        sessionStorage.setItem("reddyMax", "2");
-        sessionStorage.setItem("swapnilMax", "2");
-      } else if (answers[0] === "Appeared but not fused") {
-        sessionStorage.setItem("agarwalMin", "2");
-        sessionStorage.setItem("agarwalMax", "19");
-        sessionStorage.setItem("mukherjeeMin", "1");
-        sessionStorage.setItem("mukherjeeMax", "20");
-        sessionStorage.setItem("reddyMin", "2");
-        sessionStorage.setItem("reddyMax", "19");
-        sessionStorage.setItem("swapnilMin", "2");
-        sessionStorage.setItem("swapnilMax", "19");
-      } else if (answers[0] === "Fused") {
-        sessionStorage.setItem("agarwalMin", "19");
-
-        sessionStorage.setItem("mukherjeeMin", "19");
-
-        sessionStorage.setItem("reddyMin", "18");
-
-        sessionStorage.setItem("swapnilMin", "18");
-      }
-    }
-    if (answers[1]) {
-      if (answers[1] === "Not appeared") {
-        sessionStorage.setItem("agarwalMax", "6");
-
-        sessionStorage.setItem("mukherjeeMax", "11");
-
-        sessionStorage.setItem("reddyMax", "6");
-
-        sessionStorage.setItem("swapnilMax", "5");
-      } else if (answers[1] === "Appeared but not fused") {
-        sessionStorage.setItem("agarwalMin", "6");
-        sessionStorage.setItem("agarwalMax", "19");
-        sessionStorage.setItem("mukherjeeMin", "10");
-        sessionStorage.setItem("mukherjeeMax", "18");
-        sessionStorage.setItem("reddyMin", "5");
-        sessionStorage.setItem("reddyMax", "18");
-        sessionStorage.setItem("swapnilMin", "5");
-        sessionStorage.setItem("swapnilMax", "18");
-      } else if (answers[1] === "Fused") {
-        sessionStorage.setItem("agarwalMin", "19");
-        // sessionStorage.setItem("agarwalMax", "15");
-        sessionStorage.setItem("mukherjeeMin", "18");
-
-        sessionStorage.setItem("reddyMin", "17");
-
-        sessionStorage.setItem("swapnilMin", "17");
-      }
-    }
-    if (answers[2]) {
-      if (answers[2] === "Yes") {
-        sessionStorage.setItem("agarwalMin", "1");
-        sessionStorage.setItem("mukherjeeMin", "1");
-
-        sessionStorage.setItem("reddyMin", "1");
-
-        sessionStorage.setItem("swapnilMin", "1");
-      } 
-    }
-    if (answers[3]) {
-      if (answers[3] === "Yes") {
-        sessionStorage.setItem("agarwalMin", "2");
-        sessionStorage.setItem("mukherjeeMin", "2");
-
-        sessionStorage.setItem("reddyMin", "2");
-
-        sessionStorage.setItem("swapnilMin", "2");
-      } 
-    }
-    if (answers[4]) {
-      if (answers[4] === "Yes") {
-        sessionStorage.setItem("agarwalMin", "3");
-        sessionStorage.setItem("mukherjeeMin", "3");
-
-        sessionStorage.setItem("reddyMin", "3");
-
-        sessionStorage.setItem("swapnilMin", "3");
-      } 
-    }
-    if (answers[5]) {
-      if (answers[5] === "Yes") {
-        sessionStorage.setItem("agarwalMin", "4");
-        sessionStorage.setItem("mukherjeeMin", "4");
-
-        sessionStorage.setItem("reddyMin", "4");
-
-        sessionStorage.setItem("swapnilMin", "4");
-      } 
-    }
-    if (answers[6]) {
-      if (answers[6] === "Yes") {
-        sessionStorage.setItem("agarwalMin", "5");
-        sessionStorage.setItem("mukherjeeMin", "5");
-
-        sessionStorage.setItem("reddyMin", "5");
-
-        sessionStorage.setItem("swapnilMin", "5");
-      } 
-    }
-    if (answers[7]) {
-      if (answers[7] === "Yes") {
-        sessionStorage.setItem("agarwalMin", "6");
-        sessionStorage.setItem("mukherjeeMin", "6");
-
-        sessionStorage.setItem("reddyMin", "6");
-
-        sessionStorage.setItem("swapnilMin", "6");
-      } 
-    }
-    if (answers[8]) {
-      if (answers[8] === "Yes") {
-        sessionStorage.setItem("agarwalMin", "7");
-        sessionStorage.setItem("mukherjeeMin", "7");
-
-        sessionStorage.setItem("reddyMin", "7");
-
-        sessionStorage.setItem("swapnilMin", "7");
-      } 
-    }
-    if (answers[9]) {
-      if (answers[9] === "Yes") {
-        sessionStorage.setItem("agarwalMin", "10");
-        sessionStorage.setItem("mukherjeeMin", "10");
-
-        sessionStorage.setItem("reddyMin", "10");
-
-        sessionStorage.setItem("swapnilMin", "10");
-        sessionStorage.setItem("agarwalMax", "12");
-        sessionStorage.setItem("mukherjeeMax", "12");
-
-        sessionStorage.setItem("reddyMax", "12");
-
-        sessionStorage.setItem("swapnilMax", "12");
-      } 
-    }
-
-
-    
-  }
+  
   function optionReset(questionIndex: any, option: any) {
     const newAnswers: any = [...answers];
     newAnswers[questionIndex] = option;
     setAnswers(newAnswers);
+    sessionStorage.setItem("wrist", newAnswers);
+    getAnswersRange();
   }
   return (
     <div>

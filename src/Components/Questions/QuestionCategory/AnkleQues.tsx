@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { BsCaretRightFill } from "react-icons/bs";
+import { getAnswersRange } from "../answers";
 const AnkleQues = (props:any) => {
   const questions = [
     {
@@ -28,7 +29,7 @@ const AnkleQues = (props:any) => {
    
     if (loggedAnswers) {
       setAnswers(loggedAnswers.split(","));
-      getAnkleRange(loggedAnswers);
+      getAnswersRange()
     }
   }, [sessionStorage.getItem("ankle")]);
 
@@ -39,96 +40,13 @@ const AnkleQues = (props:any) => {
     setAnswers(newAnswers);
     sessionStorage.setItem("ankle", newAnswers);
   };
-  function getAnkleRange(chosenAnswers: any) {
-    const answers = chosenAnswers.split(",");
-
-    if (answers[0]) {
-      if (answers[0] === "Not appeared") {
-        sessionStorage.setItem("agarwalMax", "1");
-        // sessionStorage.setItem("mukherjeeMax", "1");
-        sessionStorage.setItem("reddyMax", "1");
-        sessionStorage.setItem("swapnilMax", "1");
-      } else if (answers[0] === "Appeared but not fused") {
-        sessionStorage.setItem("agarwalMin", "1");
-        sessionStorage.setItem("agarwalMax", "17");
-        // sessionStorage.setItem("mukherjeeMin", "0");
-        sessionStorage.setItem("mukherjeeMax", "16");
-        sessionStorage.setItem("reddyMin", "1");
-        sessionStorage.setItem("reddyMax", "17");
-        sessionStorage.setItem("swapnilMin", "1");
-        sessionStorage.setItem("swapnilMax", "17");
-      } else if (answers[0] === "Fused") {
-        sessionStorage.setItem("agarwalMin", "17");
-
-        sessionStorage.setItem("mukherjeeMin", "16");
-
-        sessionStorage.setItem("reddyMin", "16");
-
-        sessionStorage.setItem("swapnilMin", "16");
-      }
-    }
-    if (answers[1]) {
-      if (answers[1] === "Not appeared") {
-        sessionStorage.setItem("agarwalMax", "1");
-
-        // sessionStorage.setItem("mukherjeeMax", "11");
-
-        sessionStorage.setItem("reddyMax", "1");
-
-        sessionStorage.setItem("swapnilMax", "1");
-      } else if (answers[1] === "Appeared but not fused") {
-        sessionStorage.setItem("agarwalMin", "1");
-        sessionStorage.setItem("agarwalMax", "17");
-        // sessionStorage.setItem("mukherjeeMin", "1");
-        sessionStorage.setItem("mukherjeeMax", "17");
-        sessionStorage.setItem("reddyMin", "1");
-        sessionStorage.setItem("reddyMax", "17");
-        sessionStorage.setItem("swapnilMin", "1");
-        sessionStorage.setItem("swapnilMax", "17");
-      } else if (answers[1] === "Fused") {
-        sessionStorage.setItem("agarwalMin", "17");
-        // sessionStorage.setItem("agarwalMax", "15");
-        sessionStorage.setItem("mukherjeeMin", "14");
-
-        sessionStorage.setItem("reddyMin", "16");
-
-        sessionStorage.setItem("swapnilMin", "16");
-      }
-    }
-    if (answers[2]) {
-      if (answers[2] === "Not appeared") {
-        sessionStorage.setItem("agarwalMax", "4");
-
-        // sessionStorage.setItem("mukherjeeMax", "17");
-
-        sessionStorage.setItem("reddyMax", "4");
-
-        sessionStorage.setItem("swapnilMax", "4");
-      } else if (answers[2] === "Appeared but not fused") {
-        sessionStorage.setItem("agarwalMin", "4");
-        sessionStorage.setItem("agarwalMax", "18");
-        // sessionStorage.setItem("mukherjeeMin", "14");
-        sessionStorage.setItem("mukherjeeMax", "16");
-        sessionStorage.setItem("reddyMin", "4");
-        sessionStorage.setItem("reddyMax", "19");
-        sessionStorage.setItem("swapnilMin", "4");
-        sessionStorage.setItem("swapnilMax", "19");
-      } else if (answers[2] === "Fused") {
-        sessionStorage.setItem("agarwalMin", "18");
-        sessionStorage.setItem("mukherjeeMin", "11");
-
-        sessionStorage.setItem("reddyMin", "18");
-
-        sessionStorage.setItem("swapnilMin", "18");
-      }
-    }
-
-   
-  }
+ 
   function optionReset(questionIndex: any, option: any) {
     const newAnswers: any = [...answers];
     newAnswers[questionIndex] = option;
     setAnswers(newAnswers);
+    sessionStorage.setItem("ankle", newAnswers);
+    getAnswersRange()
   }
   return (
     <div>
