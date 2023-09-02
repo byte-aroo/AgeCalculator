@@ -1,10 +1,5 @@
-.footer {
+/* .footer {
     display: flex;
-    /* border:1px solid black; */
-    /* margin-top: 5%; */
-    /* text-align: center;
-    align-items: center;
-    justify-content: center; */
   }
   .footer-logo {
     width: 22%;
@@ -17,13 +12,10 @@
     flex-direction: column;
     margin-top: 1%;
   
-    /* margin-left:-25rem; */
-  
   }
   .footer a {
     width:50%;
     color: white;
-    /* width:20rem */
   }
   .footer-text p{
     
@@ -31,7 +23,6 @@
     margin-bottom: 1%;
   }
   .footer-text-connect {
-    /* margin-top: -1%; */
     text-align: left;
   }
   .contact-us{
@@ -51,3 +42,119 @@
     color: #6c757d!important;
     margin-top: 8%;
 }
+
+
+ */
+
+
+
+
+ /* Default styles for the footer */
+.footer {
+  display: flex;
+  /* flex-wrap: wrap;  */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* padding: 20px; */
+}
+
+.footer-logo {
+  width: 22%;
+  height: auto;
+  padding: 10px;
+  margin-left: 70%;
+  max-width: 100%; /* Ensure the logo doesn't exceed its container's width */
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+  align-items: flex-start; /* Align text to the left on smaller screens */
+  width: 100%; /* Ensure the text spans the entire width */
+}
+
+.footer a {
+  color: white;
+  width: 100%; /* Make links span the entire width */
+  text-align: left; /* Align links to the left on smaller screens */
+}
+
+.footer-text p {
+  font-size: 0.8em!important;
+  margin-bottom: 1%;
+}
+
+.footer-text-connect {
+  text-align: left;
+}
+
+.contact-us {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.contact-us a {
+  color: white!important;
+}
+
+.terms {
+  text-align: center;
+}
+
+.terms p {
+  font-size: 0.7rem;
+}
+
+.text-muted {
+  color: #6c757d!important;
+  margin-top: 8%;
+}
+
+/* Media query for screens smaller than 768px (e.g., tablets) */
+@media (max-width: 1424px) {
+
+  .footer {
+    width:100%;
+    flex-direction: row; /* Stack items vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    width: 50%; /* Reduce logo size for smaller screens */
+    margin-left: 0;
+  }
+
+  .footer-text {
+    margin-top: 5%; /* Adjust spacing between text and logo */
+  }
+
+  .footer a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-us {
+    text-align: center;
+  }
+}
+
+/* Media query for screens smaller than 576px (e.g., mobile devices) */
+@media (max-width: 576px) {
+  .footer{
+    width:100%
+  }
+  .footer-logo {
+    width: 70%; /* Further reduce logo size for small screens */
+  }
+
+  .footer-text p {
+    font-size: 0.7em!important; /* Adjust text size for small screens */
+  }
+
+  .text-muted {
+    margin-top: 5%; /* Reduce the margin-top for small screens */
+  }
+}
+

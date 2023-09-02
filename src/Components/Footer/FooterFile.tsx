@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import "./FooterFile.css";
 const FooterFile = () => {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
+    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted" style={{width:'100%',border:'1px solid black'}}>
       <div
         className="text-center p-2"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)",width:'100%',border:'1px solid red' }}
       >
         <div className="footer">
           <a href="https://www.linkedin.com/company/bytearoo/">
@@ -41,3 +41,5 @@ const FooterFile = () => {
 };
 
 export default FooterFile;
+
+

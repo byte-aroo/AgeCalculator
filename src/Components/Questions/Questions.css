@@ -11,7 +11,17 @@
 }
 .questions-wrapper {
   position: relative;
+  width:110%;
   height: 100%;
+  margin-left: 10%;
+}
+@media (max-width: 576px) {
+  .questions-wrapper {
+    /* Center the element on smaller screens */
+    margin-left: 15px;
+    margin-right: auto;
+    width: 110%; /* Adjust the width as needed for centering */
+  }
 }
 .questions-card {
   

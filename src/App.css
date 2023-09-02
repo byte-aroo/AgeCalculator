@@ -48,13 +48,11 @@ html {
 }
 body {
 }
-.column {
+/* .column {
   float: left;
   height: 100%;
-  /* padding: 10px; */
-  /* height: 300px; Should be removed. Only for demonstration */
+ 
 }
-
 .left {
   width: 70%;
 
@@ -65,12 +63,12 @@ body {
   width: 30%;
 }
 
-/* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 .modal-logo {
   margin-top: -2%;
   width: 100%;
@@ -82,6 +80,11 @@ body {
   text-align: center;
   width: 110%;
 }
+@media (max-width: 576px) {
+  .ad-modal {
+    width:120%; /* Set the width to 100% on mobile devices */
+  }
+}
 .modal-text {
   margin: auto;
   font-size: 0.8rem;
@@ -92,7 +95,7 @@ body {
 .resource-team {
   display: grid;
   /* grid-template-rows: 500px ; */
-  grid-template-columns: 170px 170px 170px;
+  grid-template-columns: 34% 34% 34%;
   /* gap: 50px 100px; */
   /* align-items: center; */
 }
@@ -101,7 +104,7 @@ body {
   margin:0% 17%;
   display: grid;
   /* grid-template-rows: 500px ; */
-  grid-template-columns: 170px 170px 170px;
+  grid-template-columns: 60% 60% 60%;
   /* gap: 50px 100px; */
 }
 .info-card {
@@ -144,6 +147,12 @@ body {
   /* color: ; */
   /* margin: auto; */
 }
+@media (max-width: 576px) {
+  .reset-all {
+    /* Center the button on smaller screens */
+    margin: 5% 55%;
+  }
+}
 .google-form{
   width:100%;
   height: 100%;
@@ -162,4 +171,26 @@ border:0.5px solid black;
 background-color:rgba(20, 183, 237, 0.24);
 
 
+}
+
+
+.content-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.column {
+  flex: 1;
+}
+
+/* Add any additional styling you need for your columns here */
+
+.app-mobile {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on mobile */
 }

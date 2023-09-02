@@ -5,5 +5,29 @@ margin-top: 4%;
 margin-bottom: 5%;
 }
 .sliders-wrapper{
-    margin-top: 25%;
+    margin-top: 5%;
+    width:60%;
+    margin-left: 30%;
 }
+@media (max-width: 768px) {
+    .sliders-wrapper {
+      margin-top: 15%; /* Adjust margin-top for smaller screens */
+      width: 80%; /* Adjust width for smaller screens */
+      align-self: center; /* Adjust margin-left for smaller screens */
+    }
+  }
+  
+  /* Media query for screens smaller than 576px (e.g., mobile devices) */
+  @media (max-width: 576px) {
+    .sliders-wrapper {
+      margin-top: 15%; /* Further adjust margin-top for small screens */
+      width: 90%; /* Further adjust width for small screens */
+      margin-left: 10%; /* Further adjust margin-left for small screens */
+    }
+  }
+  
+  
+  
+  
+  
+  

@@ -8,22 +8,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FooterFile from "./Components/Footer/FooterFile";
 import { Modal } from "antd";
 import { Card } from "react-bootstrap";
+import { isMobile } from "react-device-detect";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [isFormOpen,setIsFormOpen]=useState(false)
-  const [reset,setReset]=useState(false)
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [reset, setReset] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [isAdShown, setIsAdShown] = useState(false);
-  useEffect(()=>{
-    setTimeout(()=>{
-      if(!isFormOpen){
-        setIsFormOpen(true)
+  useEffect(() => {
+    setTimeout(() => {
+      if (!isFormOpen) {
+        setIsFormOpen(true);
       }
-  
-    },5000)
-  },[])
-  
+    }, 5000);
+  }, []);
+
   const resourceTeam = [
     {
       id: "arijit",
@@ -83,27 +83,45 @@ function App() {
   };
   function resetAll() {
     sessionStorage.clear();
-    setReset(true)
+    setReset(true);
     // window.location.reload();
   }
+  console.log("is mobile",isMobile)
   return (
-    <div style={{ backgroundColor: "rgb(184 231 247 / 24%)" }}>
-      <div className="App">
-        <Header setIsModalOpen={setIsModalOpen} />
+    <>
+      <div style={{ backgroundColor: "rgb(184 231 247 / 24%)" }}>
+  <div className="App">
+    <Header setIsModalOpen={setIsModalOpen} />
 
+    {/* Using media query to switch between layouts */}
+    <div className="content-container">
+      {!isMobile ? (
         <div className="row">
           <div className="column left">
-            <Questions reset={reset}/>
+            <Questions reset={reset} />
           </div>
           <div className="column right">
             <Sliders />
           </div>
         </div>
-        <button className="reset-all" onClick={resetAll}>
-          Reset
-        </button>
-      </div>
-      <FooterFile />
+      ) : (
+        <div className="app-mobile">
+          <div className="first-element">
+            <Questions reset={reset} />
+          </div>
+          <div className="second-element">
+            <Sliders />
+          </div>
+        </div>
+      )}
+    </div>
+    <button className="reset-all" onClick={resetAll}>
+      Reset
+    </button>
+  </div>
+  <FooterFile />
+</div>
+
       <Modal
         title="Concept and Resource Team"
         open={isModalOpen}
@@ -112,7 +130,7 @@ function App() {
         footer={null}
         className="ad-modal"
         width="fit-content"
-        style={{ overflow: "hidden" }}
+        // style={{ overflow: "hidden" }}
       >
         <div className="resource-team-wrapper">
           <div className="resource-team">
@@ -120,7 +138,8 @@ function App() {
               <>
                 <Card
                   className="info-card"
-                  style={{ width: "10rem", border: "none" }}
+                  style={{width: "10rem", border: "none" }}
+          
                 >
                   <Card.Img
                     variant="top"
@@ -171,7 +190,9 @@ function App() {
               </>
             ))}
           </div>
-          <button className="inquiry-form" onClick={()=>setIsFormOpen(true)}>Inquiry Form</button>
+          <button className="inquiry-form" onClick={() => setIsFormOpen(true)}>
+            Inquiry Form
+          </button>
         </div>
       </Modal>
       <Modal
@@ -188,11 +209,10 @@ function App() {
           src="https://forms.gle/jWtTMg3XVXsG7zuY7"
           className="google-form"
           name="myIFrame"
-          style={{ height:'90vh'}}
-          
+          style={{ height: "90vh" }}
         ></iframe>
       </Modal>
-    </div>
+    </>
   );
 }
 
