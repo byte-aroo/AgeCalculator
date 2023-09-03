@@ -30,6 +30,18 @@ export function getAnswersRange() {
   if (shoulderAnswers) {
     if (shoulderAnswers[0]) {
       if (shoulderAnswers[0] === "Not appeared") {
+        // if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) > 18) {
+          ranges["agarwalMin"] = 0;
+        // }
+        // if (!ranges["mukherjeeMin"] || Number(ranges["mukherjeeMin"]) > 22) {
+          ranges["mukherjeeMin"] = 0;
+        // }
+        // if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) > 20) {
+          ranges["reddyMin"] = 0;
+        // }
+        // if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) > 20) {
+          ranges["swapnilMin"] =0;
+        // }
         if (Number(ranges["agarwalMax"]) < 19) {
           ranges["agarwalMax"] = 19;
         }

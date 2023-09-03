@@ -89,7 +89,7 @@ function App() {
                   <Questions reset={reset} />
                 </div>
                 <div className="column right">
-                  <Sliders />
+                  <Sliders reset={reset}/>
                 </div>
               </div>
             ) : (
@@ -98,7 +98,7 @@ function App() {
                   <Questions reset={reset} />
                 </div>
                 <div className="second-element">
-                  <Sliders />
+                  <Sliders reset={reset}/>
                 </div>
               </div>
             )}

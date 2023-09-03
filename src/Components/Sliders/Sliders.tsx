@@ -5,7 +5,7 @@ import { Card } from "react-bootstrap";
 import "./Sliders.css";
 import { useQuery, useQueryClient } from "react-query";
 
-const Sliders = () => {
+const Sliders = (props:any) => {
   const [agarwalSliderValue, setAgarwalSliderValue] = useState<any>([]);
   const [mukherjeeSliderValue, setMukherjeeSliderValue] = useState<any>([]);
   const [reddySliderValue, setReddySliderValue] = useState<any>([]);
@@ -54,7 +54,7 @@ const Sliders = () => {
           <Card.Text>
             <Slider
               range
-              value={agarwalSliderValue ? agarwalSliderValue : [0, 0]}
+              value={props.reset? [0,0]:agarwalSliderValue ? agarwalSliderValue : [0, 0]}
               tooltip={{ open:true,placement: "bottom" }}
             />
           </Card.Text>
@@ -72,7 +72,7 @@ const Sliders = () => {
           <Card.Text>
             <Slider
               range
-              value={mukherjeeSliderValue ? mukherjeeSliderValue : [0, 0]}
+              value={props.reset? [0,0]:mukherjeeSliderValue ? mukherjeeSliderValue : [0, 0]}
               tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
@@ -90,7 +90,7 @@ const Sliders = () => {
           <Card.Text>
             <Slider
               range
-              value={reddySliderValue ? reddySliderValue : [0, 0]}
+              value={props.reset? [0,0]:reddySliderValue ? reddySliderValue : [0, 0]}
               tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
@@ -106,7 +106,7 @@ const Sliders = () => {
           <Card.Text>
             <Slider
               range
-              value={swapnilSliderValue ? swapnilSliderValue : [0, 0]}
+              value={props.reset? [0,0]:swapnilSliderValue ? swapnilSliderValue : [0, 0]}
               tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
@@ -124,7 +124,7 @@ const Sliders = () => {
           <Card.Text>
             <Slider
               range
-              value={nanddySliderValue ? nanddySliderValue : [0, 0]}
+              value={props.reset? [0,0]:nanddySliderValue ? nanddySliderValue : [0, 0]}
               tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
