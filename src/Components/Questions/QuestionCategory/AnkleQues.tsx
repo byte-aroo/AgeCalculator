@@ -22,6 +22,12 @@ const AnkleQues = (props:any) => {
     },
   ];
   useEffect(() => {
+
+    if (props.reset) {
+      setAnswers(Array(questions.length).fill(null));
+    }
+  }, [props.reset]);
+  useEffect(() => {
     if(props.reset){
       setAnswers(Array(questions.length).fill(null))
     }
