@@ -86,7 +86,7 @@ function App() {
     setReset(true);
     // window.location.reload();
   }
-  console.log("is mobile",isMobile)
+
   return (
     <>
       <div style={{ backgroundColor: "rgb(184 231 247 / 24%)" }}>

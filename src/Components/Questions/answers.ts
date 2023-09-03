@@ -1,17 +1,22 @@
 export function getAnswersRange() {
-  console.log("dfdfdzbfdskfbhjeadfhvbdjskl");
-  const ranges: any = {
-    agarwalMin: '',
-    agarwalMax: '',
-    mukherjeeMin: '',
-    mukherjeeMax: '',
-    reddyMin: '',
-    reddyMax: '',
-    swapnilMin: '',
-    swapnilMax: '',
-    nanddyMin: '',
-    nanddyMax: '',
+  let ranges: any = {
+    agarwalMin: "",
+    agarwalMax: "",
+    mukherjeeMin: "",
+    mukherjeeMax: "",
+    reddyMin: "",
+    reddyMax: "",
+    swapnilMin: "",
+    swapnilMax: "",
+    nanddyMin: "",
+    nanddyMax: "",
   };
+
+  let sliderRanges = sessionStorage.getItem("answers");
+  if (sliderRanges) {
+    ranges = JSON.parse(sliderRanges);
+  }
+
   let shoulderAnswers = sessionStorage.getItem("shoulder")?.split(",");
   let elbowAnswers = sessionStorage.getItem("elbow")?.split(",");
   let kneeAnswers = sessionStorage.getItem("knee")?.split(",");
@@ -20,18 +25,10 @@ export function getAnswersRange() {
   let dentalTempAnswers = sessionStorage.getItem("dentalTemp")?.split(",");
   let dentalPermAnswers = sessionStorage.getItem("dentalPerm")?.split(",");
   let ankleAnswers = sessionStorage.getItem("ankle")?.split(",");
-console.log("ranfe",ranges,ranges['agarwalMax'],Number(ranges['agarwalMax']))
-console.log(shoulderAnswers,elbowAnswers,kneeAnswers,wristAnswers,hipAnswers,dentalPermAnswers,dentalTempAnswers,ankleAnswers)
-
-
-
 
   if (shoulderAnswers) {
-    console.log("yaha 1")
     if (shoulderAnswers[0]) {
-      console.log("yaha 2")
       if (shoulderAnswers[0] === "Not appeared") {
-        console.log("yaha 3")
         if (Number(ranges["agarwalMax"]) < 19) {
           ranges["agarwalMax"] = 19;
         }
@@ -46,7 +43,6 @@ console.log(shoulderAnswers,elbowAnswers,kneeAnswers,wristAnswers,hipAnswers,den
         }
       } else if (shoulderAnswers[0] === "Appeared but not fused") {
         if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) > 11) {
-          console.log("yaha 4")
           ranges["agarwalMin"] = 11;
         }
         if (Number(ranges["agarwalMax"]) < 25) {
@@ -141,7 +137,7 @@ console.log(shoulderAnswers,elbowAnswers,kneeAnswers,wristAnswers,hipAnswers,den
     }
     if (shoulderAnswers[2]) {
       if (shoulderAnswers[2] === "Not appeared") {
-        if ( Number(ranges["agarwalMax"]) < 16) {
+        if (Number(ranges["agarwalMax"]) < 16) {
           ranges["agarwalMax"] = 16;
         }
         if (Number(ranges["mukherjeeMax"]) < 17) {
@@ -1478,7 +1474,6 @@ console.log(shoulderAnswers,elbowAnswers,kneeAnswers,wristAnswers,hipAnswers,den
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) > 6) {
           ranges["swapnilMin"] = 6;
         }
-        
       }
     }
     if (dentalTempAnswers[1]) {
@@ -1595,10 +1590,7 @@ console.log(shoulderAnswers,elbowAnswers,kneeAnswers,wristAnswers,hipAnswers,den
         }
       }
     }
-    
   }
-
-
 
   if (dentalPermAnswers) {
     if (dentalPermAnswers[0]) {
@@ -1618,7 +1610,6 @@ console.log(shoulderAnswers,elbowAnswers,kneeAnswers,wristAnswers,hipAnswers,den
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) > 6) {
           ranges["swapnilMin"] = 6;
         }
-        
       }
     }
     if (dentalPermAnswers[1]) {
@@ -1737,7 +1728,6 @@ console.log(shoulderAnswers,elbowAnswers,kneeAnswers,wristAnswers,hipAnswers,den
     }
     if (dentalPermAnswers[7]) {
       if (dentalPermAnswers[7] === "Appeared") {
-      
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) > 14) {
           ranges["swapnilMin"] = 14;
         }
@@ -1763,6 +1753,6 @@ console.log(shoulderAnswers,elbowAnswers,kneeAnswers,wristAnswers,hipAnswers,den
       }
     }
   }
-  console.log("range answer",ranges)
-  // sessionStorage.setItem("answers",JSON.stringify(ranges))
+
+  sessionStorage.setItem("answers", JSON.stringify(ranges));
 }
