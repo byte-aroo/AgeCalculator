@@ -14,8 +14,6 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   const [reset, setReset] = useState(false);
-  const [prevScrollPosition, setPrevScrollPosition] = useState(0);
-  const [isAdShown, setIsAdShown] = useState(false);
 
   const resourceTeam = [
     {

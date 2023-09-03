@@ -3,7 +3,6 @@ import { Slider } from "antd";
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import "./Sliders.css";
-import { useQuery, useQueryClient } from "react-query";
 
 const Sliders = (props:any) => {
   const [agarwalSliderValue, setAgarwalSliderValue] = useState<any>([]);
@@ -12,14 +11,22 @@ const Sliders = (props:any) => {
   const [swapnilSliderValue, setSwapnilSliderValue] = useState<any>([]);
   const [nanddySliderValue, setNanddySliderValue] = useState<any>([]);
   
-  const [sessionData, setSessionData] = useState<any>();
+  useEffect(() => {
+
+    if (props.reset) {
+      setAgarwalSliderValue([0,0]);
+      setMukherjeeSliderValue([0,0]);
+      setReddySliderValue([0,0]);
+      setSwapnilSliderValue([0,0]);
+      setNanddySliderValue([0,0]);
+    }
+  }, [props.reset]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       // Retrieve the value from sessionStorage and update the state
       const updatedSessionData = sessionStorage.getItem("answers");
       if(updatedSessionData){
-        setSessionData(JSON.parse(updatedSessionData));
         assignRanges(JSON.parse(updatedSessionData))
       }
     }, 1000); // Adjust the interval time (in milliseconds) as needed
@@ -54,7 +61,7 @@ const Sliders = (props:any) => {
           <Card.Text>
             <Slider
               range
-              value={props.reset? [0,0]:agarwalSliderValue ? agarwalSliderValue : [0, 0]}
+              value={agarwalSliderValue ? agarwalSliderValue : [0, 0]}
               tooltip={{ open:true,placement: "bottom" }}
             />
           </Card.Text>
@@ -72,7 +79,7 @@ const Sliders = (props:any) => {
           <Card.Text>
             <Slider
               range
-              value={props.reset? [0,0]:mukherjeeSliderValue ? mukherjeeSliderValue : [0, 0]}
+              value={mukherjeeSliderValue ? mukherjeeSliderValue : [0, 0]}
               tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
@@ -90,7 +97,7 @@ const Sliders = (props:any) => {
           <Card.Text>
             <Slider
               range
-              value={props.reset? [0,0]:reddySliderValue ? reddySliderValue : [0, 0]}
+              value={reddySliderValue ? reddySliderValue : [0, 0]}
               tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
@@ -106,7 +113,7 @@ const Sliders = (props:any) => {
           <Card.Text>
             <Slider
               range
-              value={props.reset? [0,0]:swapnilSliderValue ? swapnilSliderValue : [0, 0]}
+              value={swapnilSliderValue ? swapnilSliderValue : [0, 0]}
               tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
@@ -124,7 +131,7 @@ const Sliders = (props:any) => {
           <Card.Text>
             <Slider
               range
-              value={props.reset? [0,0]:nanddySliderValue ? nanddySliderValue : [0, 0]}
+              value={nanddySliderValue ? nanddySliderValue : [0, 0]}
               tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
