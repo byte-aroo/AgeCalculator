@@ -3,26 +3,40 @@ import { Slider } from "antd";
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import "./Sliders.css";
+import { useQuery, useQueryClient } from "react-query";
 
 const Sliders = () => {
   const [agarwalSliderValue, setAgarwalSliderValue] = useState<any>([]);
   const [mukherjeeSliderValue, setMukherjeeSliderValue] = useState<any>([]);
   const [reddySliderValue, setReddySliderValue] = useState<any>([]);
   const [swapnilSliderValue, setSwapnilSliderValue] = useState<any>([]);
-const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
+  const [nanddySliderValue, setNanddySliderValue] = useState<any>([]);
+  
+  const [sessionData, setSessionData] = useState<any>();
+
   useEffect(() => {
-    const range=sessionStorage.getItem("answers")
-    if (range) {
-      assignRanges(JSON.parse(range));
-    }
-  });
+    const intervalId = setInterval(() => {
+      // Retrieve the value from sessionStorage and update the state
+      const updatedSessionData = sessionStorage.getItem("answers");
+      if(updatedSessionData){
+        setSessionData(JSON.parse(updatedSessionData));
+        assignRanges(JSON.parse(updatedSessionData))
+      }
+    }, 1000); // Adjust the interval time (in milliseconds) as needed
+
+    // Cleanup the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []); // E
+
+
 
   function assignRanges(range: any) {
-    setAgarwalSliderValue([range.agarwalMin,range.agarwalMax]);
-    setMukherjeeSliderValue([range.mukherjeeMin,range.mukherjeeMax]);
-    setReddySliderValue([range.reddyMin,range.reddyMax]);
-    setSwapnilSliderValue([range.swapnilMin,range.swapnilMax]);
-    setNanddySliderValue([range.nanddyMin,range.nanddyMax]);
+    console.log("data",range)
+    setAgarwalSliderValue([range.agarwalMin, range.agarwalMax]);
+    setMukherjeeSliderValue([range.mukherjeeMin, range.mukherjeeMax]);
+    setReddySliderValue([range.reddyMin, range.reddyMax]);
+    setSwapnilSliderValue([range.swapnilMin, range.swapnilMax]);
+    setNanddySliderValue([range.nanddyMin, range.nanddyMax]);
   }
 
   return (
@@ -40,7 +54,7 @@ const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
           <Card.Text>
             <Slider
               range
-              value={agarwalSliderValue?agarwalSliderValue:[0,0]}
+              value={agarwalSliderValue ? agarwalSliderValue : [0, 0]}
               tooltip={{ open:true,placement: "bottom" }}
             />
           </Card.Text>
@@ -58,8 +72,8 @@ const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
           <Card.Text>
             <Slider
               range
-              value={mukherjeeSliderValue?mukherjeeSliderValue:[0,0]}
-              tooltip={{ open:true,placement: "bottom" }}
+              value={mukherjeeSliderValue ? mukherjeeSliderValue : [0, 0]}
+              tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>
@@ -76,8 +90,8 @@ const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
           <Card.Text>
             <Slider
               range
-              value={reddySliderValue?reddySliderValue:[0,0]}
-              tooltip={{open:true, placement: "bottom" }}
+              value={reddySliderValue ? reddySliderValue : [0, 0]}
+              tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>
@@ -92,8 +106,8 @@ const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
           <Card.Text>
             <Slider
               range
-              value={swapnilSliderValue?swapnilSliderValue:[0,0]}
-              tooltip={{ open:true,placement: "bottom" }}
+              value={swapnilSliderValue ? swapnilSliderValue : [0, 0]}
+              tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>
@@ -103,13 +117,15 @@ const [nanddySliderValue,setNanddySliderValue]=useState<any>([])
         style={{ width: "26rem", backgroundColor: "#f1f1f2" }}
       >
         <Card.Body>
-          <Card.Title>Nanddy (1<sup>st</sup>)</Card.Title>
+          <Card.Title>
+            Nanddy (1<sup>st</sup>)
+          </Card.Title>
 
           <Card.Text>
             <Slider
               range
-              value={nanddySliderValue?nanddySliderValue:[0,0]}
-              tooltip={{ open:true,placement: "bottom" }}
+              value={nanddySliderValue ? nanddySliderValue : [0, 0]}
+              tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>

@@ -12,17 +12,11 @@ import { isMobile } from "react-device-detect";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [isFormOpen, setIsFormOpen] = useState(false);
+
   const [reset, setReset] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [isAdShown, setIsAdShown] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      if (!isFormOpen) {
-        setIsFormOpen(true);
-      }
-    }, 5000);
-  }, []);
+  
 
   const resourceTeam = [
     {
@@ -78,9 +72,7 @@ function App() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  const handleFormCancel = () => {
-    setIsFormOpen(false);
-  };
+  
   function resetAll() {
     sessionStorage.clear();
     setReset(true);
@@ -130,7 +122,7 @@ function App() {
         footer={null}
         className="ad-modal"
         width="fit-content"
-        // style={{ overflow: "hidden" }}
+        style={{zIndex: '1100'}}
       >
         <div className="resource-team-wrapper">
           <div className="resource-team">
@@ -190,28 +182,10 @@ function App() {
               </>
             ))}
           </div>
-          <button className="inquiry-form" onClick={() => setIsFormOpen(true)}>
-            Inquiry Form
-          </button>
+          
         </div>
       </Modal>
-      <Modal
-        title="Inquiry Form"
-        open={isFormOpen}
-        onOk={handleOk}
-        onCancel={handleFormCancel}
-        footer={null}
-        className="form-modal"
-        // width="max-content"
-        // style={{ overflow: "hidden" }}
-      >
-        <iframe
-          src="https://forms.gle/jWtTMg3XVXsG7zuY7"
-          className="google-form"
-          name="myIFrame"
-          style={{ height: "90vh" }}
-        ></iframe>
-      </Modal>
+      
     </>
   );
 }

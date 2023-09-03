@@ -15,16 +15,17 @@ export function getAnswersRange() {
   let sliderRanges = sessionStorage.getItem("answers");
   if (sliderRanges) {
     ranges = JSON.parse(sliderRanges);
+    console.log("cides", ranges["agarwalMax"]);
   }
 
-  let shoulderAnswers = sessionStorage.getItem("shoulder")?.split(",");
-  let elbowAnswers = sessionStorage.getItem("elbow")?.split(",");
-  let kneeAnswers = sessionStorage.getItem("knee")?.split(",");
-  let wristAnswers = sessionStorage.getItem("wrist")?.split(",");
-  let hipAnswers = sessionStorage.getItem("hip")?.split(",");
-  let dentalTempAnswers = sessionStorage.getItem("dentalTemp")?.split(",");
-  let dentalPermAnswers = sessionStorage.getItem("dentalPerm")?.split(",");
-  let ankleAnswers = sessionStorage.getItem("ankle")?.split(",");
+  let shoulderAnswers: any = sessionStorage.getItem("shoulder")?.split(",");
+  let elbowAnswers: any = sessionStorage.getItem("elbow")?.split(",");
+  let kneeAnswers: any = sessionStorage.getItem("knee")?.split(",");
+  let wristAnswers: any = sessionStorage.getItem("wrist")?.split(",");
+  let hipAnswers: any = sessionStorage.getItem("hip")?.split(",");
+  let dentalTempAnswers: any = sessionStorage.getItem("dentalTemp")?.split(",");
+  let dentalPermAnswers: any = sessionStorage.getItem("dentalPerm")?.split(",");
+  let ankleAnswers: any = sessionStorage.getItem("ankle")?.split(",");
 
   if (shoulderAnswers) {
     if (shoulderAnswers[0]) {
@@ -1753,6 +1754,65 @@ export function getAnswersRange() {
       }
     }
   }
+  console.log("shoulder", shoulderAnswers?.length);
+  const hasEmptyShoulderElements: any = shoulderAnswers && shoulderAnswers.every(
+    (element: any) => !element
+  );
+  const hasEmptyWristElements: any = wristAnswers && wristAnswers.every(
+    (element: any) => !element
+  );
 
+  const hasEmptyElbowElements: any = elbowAnswers && elbowAnswers.every(
+    (element: any) => !element
+  );
+
+  const hasEmptyHipElements: any = hipAnswers && hipAnswers.every((element: any) => !element);
+
+  const hasEmptyKneeElements: any = kneeAnswers && kneeAnswers.every(
+    (element: any) => !element
+  );
+
+  const hasEmptyAnkleElements: any = ankleAnswers && ankleAnswers.every(
+    (element: any) => !element
+  );
+
+  const hasEmptyDentalTempElements: any = dentalTempAnswers && dentalTempAnswers.every(
+    (element: any) => !element
+  );
+
+  const hasEmptyDentalPermElements: any = dentalPermAnswers && dentalPermAnswers.every(
+    (element: any) => !element
+  );
+console.log("shoul", hasEmptyShoulderElements ,hasEmptyAnkleElements
+)
+const variablesToCheck = [
+  hasEmptyShoulderElements,
+  hasEmptyWristElements,
+  hasEmptyElbowElements,
+  hasEmptyHipElements,
+  hasEmptyKneeElements,
+  hasEmptyAnkleElements,
+  hasEmptyDentalTempElements,
+  hasEmptyDentalPermElements,
+];
+
+const allAreTrue = variablesToCheck.every((variable) => variable === undefined || variable === true);
+if (allAreTrue) {
+  sessionStorage.setItem("answers", JSON.stringify({
+    agarwalMin: "",
+    agarwalMax: "",
+    mukherjeeMin: "",
+    mukherjeeMax: "",
+    reddyMin: "",
+    reddyMax: "",
+    swapnilMin: "",
+    swapnilMax: "",
+    nanddyMin: "",
+    nanddyMax: "",
+  }));
+} else {
   sessionStorage.setItem("answers", JSON.stringify(ranges));
+}
+ 
+  
 }
