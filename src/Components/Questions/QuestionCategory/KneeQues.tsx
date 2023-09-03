@@ -70,8 +70,11 @@ const KneeQues = (props:any) => {
                     className="input-radios"
                       type="radio"
                       value={optionIndex}
-                      checked={answers[questionIndex]?
-                       answers[questionIndex] === option:false
+                      checked={ sessionStorage.getItem("knee")
+                      ? answers[questionIndex]
+                        ? answers[questionIndex] === option
+                        : false
+                      : false
                       }
                       onChange={() =>
                         handleOptionChange(questionIndex, optionIndex,option)

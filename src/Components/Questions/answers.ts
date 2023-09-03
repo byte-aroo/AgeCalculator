@@ -15,7 +15,7 @@ export function getAnswersRange() {
   let sliderRanges = sessionStorage.getItem("answers");
   if (sliderRanges) {
     ranges = JSON.parse(sliderRanges);
-    console.log("cides", ranges["agarwalMax"]);
+   
   }
 
   let shoulderAnswers: any = sessionStorage.getItem("shoulder")?.split(",");
@@ -1754,7 +1754,7 @@ export function getAnswersRange() {
       }
     }
   }
-  console.log("shoulder", shoulderAnswers?.length);
+
   const hasEmptyShoulderElements: any = shoulderAnswers && shoulderAnswers.every(
     (element: any) => !element
   );
@@ -1783,8 +1783,7 @@ export function getAnswersRange() {
   const hasEmptyDentalPermElements: any = dentalPermAnswers && dentalPermAnswers.every(
     (element: any) => !element
   );
-console.log("shoul", hasEmptyShoulderElements ,hasEmptyAnkleElements
-)
+
 const variablesToCheck = [
   hasEmptyShoulderElements,
   hasEmptyWristElements,

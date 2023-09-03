@@ -104,9 +104,11 @@ const DentalTemp = (props:any) => {
                         type="radio"
                         value={optionIndex}
                         checked={
-                          answers[questionIndex]
-                            ? answers[questionIndex] ===option
-                            : false
+                          sessionStorage.getItem("dentalTemp")
+                              ? answers[questionIndex]
+                                ? answers[questionIndex] === option
+                                : false
+                              : false
                         }
                         onChange={() =>
                           handleOptionChange(questionIndex, optionIndex, option)

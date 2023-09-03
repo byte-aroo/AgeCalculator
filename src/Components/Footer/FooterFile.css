@@ -49,13 +49,9 @@
 
 
 
- /* Default styles for the footer */
 .footer {
   display: flex;
-  /* flex-wrap: wrap;  */
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  /* padding: 20px; */
+  
 }
 
 .footer-logo {
@@ -63,21 +59,21 @@
   height: auto;
   padding: 10px;
   margin-left: 70%;
-  max-width: 100%; /* Ensure the logo doesn't exceed its container's width */
+  max-width: 100%; 
 }
 
 .footer-text {
   display: flex;
   flex-direction: column;
   margin-top: 1%;
-  align-items: flex-start; /* Align text to the left on smaller screens */
-  width: 100%; /* Ensure the text spans the entire width */
+  align-items: flex-start; 
+  width: 100%;
 }
 
 .footer a {
   color: white;
-  width: 100%; /* Make links span the entire width */
-  text-align: left; /* Align links to the left on smaller screens */
+  width: 100%; 
+  text-align: left; 
 }
 
 .footer-text p {
@@ -111,23 +107,22 @@
   margin-top: 8%;
 }
 
-/* Media query for screens smaller than 768px (e.g., tablets) */
 @media (max-width: 1424px) {
 
   .footer {
     width:100%;
-    flex-direction: row; /* Stack items vertically */
+    flex-direction: row; 
     align-items: center;
     text-align: center;
   }
 
   .footer-logo {
-    width: 50%; /* Reduce logo size for smaller screens */
+    width: 50%; 
     margin-left: 0;
   }
 
   .footer-text {
-    margin-top: 5%; /* Adjust spacing between text and logo */
+    margin-top: 5%; 
   }
 
   .footer a {
@@ -140,7 +135,6 @@
   }
 }
 
-/* Media query for screens smaller than 576px (e.g., mobile devices) */
 @media (max-width: 576px) {
   .footer{
     width:100%

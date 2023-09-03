@@ -31,7 +31,7 @@ const Sliders = () => {
 
 
   function assignRanges(range: any) {
-    console.log("data",range)
+
     setAgarwalSliderValue([range.agarwalMin, range.agarwalMax]);
     setMukherjeeSliderValue([range.mukherjeeMin, range.mukherjeeMax]);
     setReddySliderValue([range.reddyMin, range.reddyMax]);

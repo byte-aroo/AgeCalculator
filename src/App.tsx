@@ -16,7 +16,6 @@ function App() {
   const [reset, setReset] = useState(false);
   const [prevScrollPosition, setPrevScrollPosition] = useState(0);
   const [isAdShown, setIsAdShown] = useState(false);
-  
 
   const resourceTeam = [
     {
@@ -51,20 +50,6 @@ function App() {
     },
   ];
 
-  // const showModal = (height: any) => {
-  //   const isAdShownOnce = localStorage.getItem("adShown" || {});
-
-  //   if (height > 200 && height < 300) {
-  //     if (!isAdShown) {
-  //       // if (!isAdShownOnce) {
-  //       setIsModalOpen(true);
-  //       setIsAdShown(true);
-  //       // localStorage.setItem("adShown", "true");
-  //       // }
-  //     }
-  //   }
-  // };
-
   const handleOk = () => {
     setIsModalOpen(false);
   };
@@ -72,47 +57,58 @@ function App() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  
+
   function resetAll() {
     sessionStorage.clear();
     setReset(true);
-    // window.location.reload();
+    setTimeout(() => {
+      setReset(false);
+    }, 3000);
   }
-
+  console.error = (message) => {
+    if (message.startsWith("Warning:")) {
+      // Suppress React warnings
+      return;
+    }
+    // For other console errors, log them as usual
+    originalError(message);
+  };
+  
+  // Save a reference to the original console.error
+  const originalError = console.error;
   return (
     <>
       <div style={{ backgroundColor: "rgb(184 231 247 / 24%)" }}>
-  <div className="App">
-    <Header setIsModalOpen={setIsModalOpen} />
+        <div className="App">
+          <Header setIsModalOpen={setIsModalOpen} />
 
-    {/* Using media query to switch between layouts */}
-    <div className="content-container">
-      {!isMobile ? (
-        <div className="row">
-          <div className="column left">
-            <Questions reset={reset} />
+          <div className="content-container">
+            {!isMobile ? (
+              <div className="row">
+                <div className="column left">
+                  <Questions reset={reset} />
+                </div>
+                <div className="column right">
+                  <Sliders />
+                </div>
+              </div>
+            ) : (
+              <div className="app-mobile">
+                <div className="first-element">
+                  <Questions reset={reset} />
+                </div>
+                <div className="second-element">
+                  <Sliders />
+                </div>
+              </div>
+            )}
           </div>
-          <div className="column right">
-            <Sliders />
-          </div>
+          <button className="reset-all" onClick={resetAll}>
+            Reset
+          </button>
         </div>
-      ) : (
-        <div className="app-mobile">
-          <div className="first-element">
-            <Questions reset={reset} />
-          </div>
-          <div className="second-element">
-            <Sliders />
-          </div>
-        </div>
-      )}
-    </div>
-    <button className="reset-all" onClick={resetAll}>
-      Reset
-    </button>
-  </div>
-  <FooterFile />
-</div>
+        <FooterFile />
+      </div>
 
       <Modal
         title="Concept and Resource Team"
@@ -122,70 +118,65 @@ function App() {
         footer={null}
         className="ad-modal"
         width="fit-content"
-        style={{zIndex: '1100'}}
+        style={{ zIndex: "1100" }}
       >
         <div className="resource-team-wrapper">
           <div className="resource-team">
-            {resourceTeam.slice(0, 3).map((user: any) => (
-              <>
-                <Card
-                  className="info-card"
-                  style={{width: "10rem", border: "none" }}
-          
-                >
-                  <Card.Img
-                    variant="top"
-                    className="info-card-img"
-                    src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
-                  />
-                  <div className="info-details">
-                    <p className="info-card-name">
-                      <b>{user.name}</b>
-                    </p>
+            {resourceTeam.slice(0, 3).map((user: any, index: any) => (
+              <Card
+                key={index}
+                className="info-card"
+                style={{ width: "10rem", border: "none" }}
+              >
+                <Card.Img
+                  variant="top"
+                  className="info-card-img"
+                  src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
+                />
+                <div className="info-details">
+                  <p className="info-card-name">
+                    <b>{user.name}</b>
+                  </p>
 
-                    <p className="info-card-phone">
-                      <b>Phone:</b> {user.phone}
-                    </p>
-                    <p className="info-card-email">
-                      <b>Email:</b> {user.email}
-                    </p>
-                  </div>
-                </Card>
-              </>
+                  <p className="info-card-phone">
+                    <b>Phone:</b> {user.phone}
+                  </p>
+                  <p className="info-card-email">
+                    <b>Email:</b> {user.email}
+                  </p>
+                </div>
+              </Card>
             ))}
           </div>
           <div className="rest-resource-team">
-            {resourceTeam.slice(3).map((user: any) => (
-              <>
-                <Card
-                  className="info-card"
-                  style={{ width: "10rem", border: "none" }}
-                >
-                  <Card.Img
-                    variant="top"
-                    className="info-card-img"
-                    src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
-                  />
-                  <div className="info-details">
-                    <p className="info-card-name">
-                      <b>{user.name}</b>
-                    </p>
+            {resourceTeam.slice(3).map((user: any, index: any) => (
+              <Card
+                key={index}
+                className="info-card"
+                style={{ width: "10rem", border: "none" }}
+              >
+                <Card.Img
+                  variant="top"
+                  className="info-card-img"
+                  src={`${process.env.PUBLIC_URL}/profile/${user.id}.jpg`}
+                />
+                <div className="info-details">
+                  <p className="info-card-name">
+                    <b>{user.name}</b>
+                  </p>
 
-                    <p className="info-card-phone">
-                      <b>Phone:</b> {user.phone}
-                    </p>
-                    <p className="info-card-email">
-                      <b>Email:</b> {user.email}
-                    </p>
-                  </div>
-                </Card>
-              </>
+                  <p className="info-card-phone">
+                    <b>Phone:</b> {user.phone}
+                  </p>
+                  <p className="info-card-email">
+                    <b>Email:</b> {user.email}
+                  </p>
+                </div>
+              </Card>
             ))}
           </div>
-          
         </div>
       </Modal>
-      
     </>
   );
 }

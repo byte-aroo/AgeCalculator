@@ -34,6 +34,7 @@ const ShoulderQues = (props: any) => {
   let loggedAnswers: any;
 
   useEffect(() => {
+
     if (props.reset) {
       setAnswers(Array(questions.length).fill(null));
     }
@@ -97,7 +98,7 @@ const ShoulderQues = (props: any) => {
                 </h5>
                 <div className="options">
                   {questionData.options.map((option, optionIndex) => (
-                    <>
+                  
                       <label key={optionIndex}>
                         <input
                           className="input-radios"
@@ -121,7 +122,7 @@ const ShoulderQues = (props: any) => {
                         />
                         {option}
                       </label>
-                    </>
+                  
                   ))}
                 </div>
               </div>
@@ -130,8 +131,8 @@ const ShoulderQues = (props: any) => {
         </Card.Body>
       </Card>
 
-      <p></p>
-      <p> </p>
+      {/* <p></p>
+      <p> </p> */}
     </div>
   );
 };

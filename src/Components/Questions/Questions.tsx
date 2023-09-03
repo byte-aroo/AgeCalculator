@@ -55,6 +55,7 @@ const Questions = (props:any) => {
 
           {itemList.map((item: any, index) => (
             <Pagination.Item
+            key={index}
               activeLabel=""
               active={currentIndex === index ? true : false}
               onClick={() => handleIndex(index)}

@@ -74,8 +74,11 @@ const AnkleQues = (props:any) => {
                         className="input-radios"
                         type="radio"
                         value={optionIndex}
-                        checked={answers[questionIndex]?
-                          answers[questionIndex] === option:false
+                        checked={ sessionStorage.getItem("ankle")
+                        ? answers[questionIndex]
+                          ? answers[questionIndex] === option
+                          : false
+                        : false
                         }
                         onChange={() =>
                           handleOptionChange(questionIndex, optionIndex,option)
