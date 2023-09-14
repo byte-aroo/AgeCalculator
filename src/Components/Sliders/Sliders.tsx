@@ -4,21 +4,20 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import "./Sliders.css";
 
-const Sliders = (props:any) => {
+const Sliders = (props: any) => {
   const [agarwalSliderValue, setAgarwalSliderValue] = useState<any>([]);
   const [mukherjeeSliderValue, setMukherjeeSliderValue] = useState<any>([]);
   const [reddySliderValue, setReddySliderValue] = useState<any>([]);
   const [swapnilSliderValue, setSwapnilSliderValue] = useState<any>([]);
   const [nanddySliderValue, setNanddySliderValue] = useState<any>([]);
-  
-  useEffect(() => {
 
+  useEffect(() => {
     if (props.reset) {
-      setAgarwalSliderValue([0,0]);
-      setMukherjeeSliderValue([0,0]);
-      setReddySliderValue([0,0]);
-      setSwapnilSliderValue([0,0]);
-      setNanddySliderValue([0,0]);
+      setAgarwalSliderValue([0, 100]);
+      setMukherjeeSliderValue([0, 100]);
+      setReddySliderValue([0, 100]);
+      setSwapnilSliderValue([0, 100]);
+      setNanddySliderValue([0, 100]);
     }
   }, [props.reset]);
 
@@ -26,8 +25,8 @@ const Sliders = (props:any) => {
     const intervalId = setInterval(() => {
       // Retrieve the value from sessionStorage and update the state
       const updatedSessionData = sessionStorage.getItem("answers");
-      if(updatedSessionData){
-        assignRanges(JSON.parse(updatedSessionData))
+      if (updatedSessionData) {
+        assignRanges(JSON.parse(updatedSessionData));
       }
     }, 1000); // Adjust the interval time (in milliseconds) as needed
 
@@ -35,10 +34,7 @@ const Sliders = (props:any) => {
     return () => clearInterval(intervalId);
   }, []); // E
 
-
-
   function assignRanges(range: any) {
-
     setAgarwalSliderValue([range.agarwalMin, range.agarwalMax]);
     setMukherjeeSliderValue([range.mukherjeeMin, range.mukherjeeMax]);
     setReddySliderValue([range.reddyMin, range.reddyMax]);
@@ -62,7 +58,7 @@ const Sliders = (props:any) => {
             <Slider
               range
               value={agarwalSliderValue ? agarwalSliderValue : [0, 0]}
-              tooltip={{ open:true,placement: "bottom" }}
+              tooltip={{ open: true, placement: "bottom" }}
             />
           </Card.Text>
         </Card.Body>

@@ -33,6 +33,10 @@ const DentalPerm = (props:any) => {
       options: ["Appeared", "Not appeared"],
     },
     {
+      question: "Space for third molar",
+      options: ["Appeared", "Not appeared"],
+    },
+    {
         question: "3rd molar",
         options: ["Appeared", "Not appeared"],
       },

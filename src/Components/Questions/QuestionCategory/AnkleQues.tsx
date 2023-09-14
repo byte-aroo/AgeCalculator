@@ -9,13 +9,13 @@ const AnkleQues = (props:any) => {
       options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
     {
-      question: "lower end of tibia",
+      question: "Lower end of tibia",
       options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
-    {
-      question: "upper end of fibula",
-      options: ["Not appeared", "Appeared but not fused", "Fused"],
-    },
+    // {
+    //   question: "upper end of fibula",
+    //   options: ["Not appeared", "Appeared but not fused", "Fused"],
+    // },
     {
       question: "Calcaneum",
       options: ["Not appeared", "Appeared but not fused", "Fused"],

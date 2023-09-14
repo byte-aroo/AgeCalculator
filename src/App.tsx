@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
+// import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import Questions from "./Components/Questions/Questions";
