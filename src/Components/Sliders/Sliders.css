@@ -26,6 +26,35 @@ margin-bottom: 5%;
     }
   }
   
+
+  /* In your CSS file (e.g., Sliders.css) */
+.slider-values {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Optional margin for spacing */
+}
+
+.slider-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 10px; /* Optional margin for spacing between values */
+}
+
+.slider-value label {
+  font-weight: bold;
+  margin-bottom: 5px; /* Optional margin below the label */
+}
+
+.slider-value input {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 3px;
+  width: 80px; /* Adjust the width as needed */
+}
+
   
   
   

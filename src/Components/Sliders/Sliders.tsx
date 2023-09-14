@@ -50,16 +50,22 @@ const Sliders = (props: any) => {
         style={{ width: "26rem", backgroundColor: "#f1f1f2" }}
       >
         <Card.Body>
-          <Card.Title>
-            Aggarwal (2<sup>nd</sup>)
-          </Card.Title>
-
           <Card.Text>
-            <Slider
-              range
-              value={agarwalSliderValue ? agarwalSliderValue : [0, 0]}
-              tooltip={{ open: true, placement: "bottom" }}
-            />
+            <div className="slider-values">
+              <div className="slider-value">
+                <label>Min Age:</label>
+                <input type="text" value={agarwalSliderValue[0]} readOnly />
+              </div>
+              <div className="slider-name">
+                <p style={{ fontWeight: "bold" }}>
+                  Aggarwal (2<sup>nd</sup>)
+                </p>
+              </div>
+              <div className="slider-value">
+                <label>Max Age:</label>
+                <input type="text" value={agarwalSliderValue[1]} readOnly />
+              </div>
+            </div>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -68,16 +74,46 @@ const Sliders = (props: any) => {
         style={{ width: "26rem", backgroundColor: "#f1f1f2" }}
       >
         <Card.Body>
-          <Card.Title>
-            J B Mukherjee (4<sup>th</sup>)
-          </Card.Title>
-
           <Card.Text>
-            <Slider
-              range
-              value={mukherjeeSliderValue ? mukherjeeSliderValue : [0, 0]}
-              tooltip={{ open: true, placement: "bottom" }}
-            />
+            <div className="slider-values">
+              <div className="slider-value">
+                <label>Min Age:</label>
+                <input type="text" value={mukherjeeSliderValue[0]} readOnly />
+              </div>
+              <div className="slider-name">
+                <p style={{ fontWeight: "bold" }}>
+                  J B Mukherjee (4<sup>th</sup>)
+                </p>
+              </div>
+              <div className="slider-value">
+                <label>Max Age:</label>
+                <input type="text" value={mukherjeeSliderValue[1]} readOnly />
+              </div>
+            </div>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card
+        className="slider-card"
+        style={{ width: "26rem", height: "9rem", backgroundColor: "#f1f1f2" }}
+      >
+        <Card.Body>
+          <Card.Text>
+            <div className="slider-values">
+              <div className="slider-value">
+                <label>Min Age:</label>
+                <input type="text" value={reddySliderValue[0]} readOnly />
+              </div>
+              <div className="slider-name">
+                <p style={{ fontWeight: "bold" }}>
+                  Reddy (35<sup>th</sup>)
+                </p>
+              </div>
+              <div className="slider-value">
+                <label>Max Age:</label>
+                <input type="text" value={reddySliderValue[1]} readOnly />
+              </div>
+            </div>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -86,16 +122,20 @@ const Sliders = (props: any) => {
         style={{ width: "26rem", backgroundColor: "#f1f1f2" }}
       >
         <Card.Body>
-          <Card.Title>
-            Reddy (35<sup>th</sup>)
-          </Card.Title>
-
           <Card.Text>
-            <Slider
-              range
-              value={reddySliderValue ? reddySliderValue : [0, 0]}
-              tooltip={{ open: true, placement: "bottom" }}
-            />
+            <div className="slider-values">
+              <div className="slider-value">
+                <label>Min Age:</label>
+                <input type="text" value={swapnilSliderValue[0]} readOnly />
+              </div>
+              <div className="slider-name">
+                <p style={{ fontWeight: "bold" }}>Swapnil Sir</p>
+              </div>
+              <div className="slider-value">
+                <label>Max Age:</label>
+                <input type="text" value={swapnilSliderValue[1]} readOnly />
+              </div>
+            </div>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -104,32 +144,22 @@ const Sliders = (props: any) => {
         style={{ width: "26rem", backgroundColor: "#f1f1f2" }}
       >
         <Card.Body>
-          <Card.Title>Swapnil Sir </Card.Title>
-
           <Card.Text>
-            <Slider
-              range
-              value={swapnilSliderValue ? swapnilSliderValue : [0, 0]}
-              tooltip={{ open: true, placement: "bottom" }}
-            />
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      <Card
-        className="slider-card"
-        style={{ width: "26rem", backgroundColor: "#f1f1f2" }}
-      >
-        <Card.Body>
-          <Card.Title>
-            Nanddy (1<sup>st</sup>)
-          </Card.Title>
-
-          <Card.Text>
-            <Slider
-              range
-              value={nanddySliderValue ? nanddySliderValue : [0, 0]}
-              tooltip={{ open: true, placement: "bottom" }}
-            />
+            <div className="slider-values">
+              <div className="slider-value">
+                <label>Min Age:</label>
+                <input type="text" value={nanddySliderValue[0]} readOnly />
+              </div>
+              <div className="slider-name">
+                <p style={{ fontWeight: "bold" }}>
+                  Nanddy (1<sup>st</sup>)
+                </p>
+              </div>
+              <div className="slider-value">
+                <label>Max Age:</label>
+                <input type="text" value={nanddySliderValue[1]} readOnly />
+              </div>
+            </div>
           </Card.Text>
         </Card.Body>
       </Card>
