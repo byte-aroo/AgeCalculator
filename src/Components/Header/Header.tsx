@@ -50,7 +50,7 @@ margin-left: 80%;
   border-radius: 5px;
 `;
 const TeamInquiryButton = styled.button`
-margin-left: 87.5%;
+margin-left: 80%;
   margin-top: -10%%;
   margin-bottom: 4%;
   border: 0.5px solid black;

@@ -1,154 +1,45 @@
-/* .footer {
-    display: flex;
-  }
-  .footer-logo {
-    width: 22%;
-    height: auto;
-    padding: 10px;
-    margin-left:70%;
-  }
-  .footer-text {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1%;
-  
-  }
-  .footer a {
-    width:50%;
-    color: white;
-  }
-  .footer-text p{
-    
-    font-size:.8em!important ;
-    margin-bottom: 1%;
-  }
-  .footer-text-connect {
-    text-align: left;
-  }
-  .contact-us{
-    
-    font-size: 1rem;
-  }
-  .contact-us a{
-    color: white!important;
-  }
-  .terms{
-    text-align: center;
-  }
-  .terms p{
-    font-size: 0.7rem;
-  }
-  .text-muted {
-    color: #6c757d!important;
-    margin-top: 8%;
-}
-
-
- */
-
-
-
-
+/* Footer styles */
 .footer {
   display: flex;
-  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .footer-logo {
-  width: 22%;
-  height: auto;
-  padding: 10px;
-  margin-left: 70%;
-  max-width: 100%; 
+  width: 100px; /* Adjust the width as needed */
 }
 
 .footer-text {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1%;
-  align-items: flex-start; 
-  width: 100%;
-}
-
-.footer a {
-  color: white;
-  width: 100%; 
-  text-align: left; 
+  margin-top: 10px;
 }
 
 .footer-text p {
-  font-size: 0.8em!important;
-  margin-bottom: 1%;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-.footer-text-connect {
-  text-align: left;
+.footer-text-connect ul {
+  list-style: none;
+  padding: 0;
 }
 
-.contact-us {
-  font-size: 1rem;
-  text-align: left;
+.footer-text-connect ul li {
+  margin-bottom: 5px;
 }
 
-.contact-us a {
-  color: white!important;
+.footer-text-connect a {
+  text-decoration: none;
+  color: #007bff; /* Link color */
 }
 
-.terms {
-  text-align: center;
-}
-
-.terms p {
-  font-size: 0.7rem;
-}
-
-.text-muted {
-  color: #6c757d!important;
-  margin-top: 8%;
-}
-
-@media (max-width: 1424px) {
-
-  .footer {
-    width:100%;
-    flex-direction: row; 
-    align-items: center;
-    text-align: center;
-  }
-
+/* Media query for mobile responsiveness */
+@media (max-width: 576px) {
   .footer-logo {
-    width: 50%; 
-    margin-left: 0;
+    width: 80px; /* Adjust the width for smaller screens */
   }
 
   .footer-text {
-    margin-top: 5%; 
-  }
-
-  .footer a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .contact-us {
     text-align: center;
   }
 }
-
-@media (max-width: 576px) {
-  .footer{
-    width:100%
-  }
-  .footer-logo {
-    width: 70%; /* Further reduce logo size for small screens */
-  }
-
-  .footer-text p {
-    font-size: 0.7em!important; /* Adjust text size for small screens */
-  }
-
-  .text-muted {
-    margin-top: 5%; /* Reduce the margin-top for small screens */
-  }
-}
-

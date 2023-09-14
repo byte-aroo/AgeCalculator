@@ -1,38 +1,75 @@
 import { MDBFooter } from "mdb-react-ui-kit";
 import React from "react";
-import { Link } from "react-router-dom";
 import "./FooterFile.css";
+
 const FooterFile = () => {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted" style={{width:'100%'}}>
+    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
       <div
         className="text-center p-2"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)",width:'100%' }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
         <div className="footer">
-          <a href="https://www.linkedin.com/company/bytearoo/">
-            <img className="footer-logo" src={`${process.env.PUBLIC_URL}/logo/bytearoo-logo.png`} alt="logo" />
+          <a
+            href="https://www.linkedin.com/company/bytearoo/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="footer-logo"
+              src={`${process.env.PUBLIC_URL}/logo/bytearoo-logo.png`}
+              alt="logo"
+            />
           </a>
           <div className="footer-text">
             <p>
               <b>This page is maintained and developed by ByteAroo.</b>
             </p>
-            <p className="footer-text-connect">
-              {" "}
-              <b>To Connect : </b>
-              <p>
-                <b>Website:</b> www.bytearoo.com
-              </p>
-              <p>
-                <b>LinkedIn:</b> https://www.linkedin.com/company/bytearoo/
-              </p>
-              <p>
-                <b>Email:</b> bytearoo@gmail.com
-              </p>
-              <p>
-                <b>WhatsApp:</b> +91 6375-874079
-              </p>
-            </p>
+            <div className="footer-text-connect">
+              <b>To Connect:</b>
+              <ul>
+                <li>
+                  <b>Website:</b>{" "}
+                  <a
+                    href="https://www.bytearoo.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    www.bytearoo.com
+                  </a>
+                </li>
+                <li>
+                  <b>LinkedIn:</b>{" "}
+                  <a
+                    href="https://www.linkedin.com/company/bytearoo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://www.linkedin.com/company/bytearoo/
+                  </a>
+                </li>
+                <li>
+                  <b>Email:</b>{" "}
+                  <a
+                    href="mailto:bytearoo@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    bytearoo@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <b>WhatsApp:</b>{" "}
+                  <a
+                    href="https://wa.me/916375874079"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +91 6375-874079
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -41,5 +78,3 @@ const FooterFile = () => {
 };
 
 export default FooterFile;
-
-
