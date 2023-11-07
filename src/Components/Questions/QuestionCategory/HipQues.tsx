@@ -6,29 +6,32 @@ const HipQues = (props:any) => {
   const questions = [
     {
       question: "Iliac Crest",
-      options: ["Not appeared", "Appeared but not fused","Fused"],
+      options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
     {
       question: "Ischial Tuberosity",
-      options: ["Not appeared", "Appeared but not fused","Fused"],
+      options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
     {
       question: "Triradiate cartilage",
-      options: ["Not appeared", "Appeared but not fused","Fused"],
+      options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
     {
       question: "Head of femur",
-      options: ["Not appeared", "Appeared but not fused","Fused"],
+      options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
     {
       question: "Greater trochanter",
-      options: ["Not appeared", "Appeared but not fused","Fused"],
+      options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
     {
       question: "Lesser trochanter",
-      options: ["Not appeared", "Appeared but not fused","Fused"],
+      options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
-    
+    {
+      question: "All the segments of sacral bones",
+      options: ["Not fused", "Fused"],
+    },
   ];
   useEffect(() => {
 

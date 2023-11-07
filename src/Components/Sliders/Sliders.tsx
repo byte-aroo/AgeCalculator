@@ -57,8 +57,11 @@ const Sliders = (props: any) => {
                 <input type="text" value={agarwalSliderValue[0]} readOnly />
               </div>
               <div className="slider-name">
-                <p style={{ fontWeight: "bold" }}>
-                  Aggarwal (2<sup>nd</sup>)
+                <p
+                  style={{ textAlign: "center", fontWeight: "bold", margin: 0 }}
+                >
+                  Dr. Anil Aggarwal
+                  <br />2<sup>nd</sup> Edition
                 </p>
               </div>
               <div className="slider-value">
@@ -66,6 +69,9 @@ const Sliders = (props: any) => {
                 <input type="text" value={agarwalSliderValue[1]} readOnly />
               </div>
             </div>
+            <p style={{ textAlign: "center", fontWeight: "bold", margin: 0 }}>
+              Textbook of forensic medicine and toxicology
+            </p>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -81,8 +87,11 @@ const Sliders = (props: any) => {
                 <input type="text" value={mukherjeeSliderValue[0]} readOnly />
               </div>
               <div className="slider-name">
-                <p style={{ fontWeight: "bold" }}>
-                  J B Mukherjee (4<sup>th</sup>)
+                <p
+                  style={{ textAlign: "center", fontWeight: "bold", margin: 0 }}
+                >
+                  J. B. Mukherjee
+                  <br />2<sup>nd</sup> Edition
                 </p>
               </div>
               <div className="slider-value">
@@ -90,6 +99,9 @@ const Sliders = (props: any) => {
                 <input type="text" value={mukherjeeSliderValue[1]} readOnly />
               </div>
             </div>
+            <p style={{ textAlign: "center", fontWeight: "bold", margin: 0 }}>
+              Forensic medicine and toxicology
+            </p>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -105,8 +117,12 @@ const Sliders = (props: any) => {
                 <input type="text" value={reddySliderValue[0]} readOnly />
               </div>
               <div className="slider-name">
-                <p style={{ fontWeight: "bold" }}>
-                  Reddy (35<sup>th</sup>)
+                <p
+                  style={{ textAlign: "center", fontWeight: "bold", margin: 0 }}
+                >
+                  K.S. Narayan Reddy
+                  <br />
+                  35<sup>th</sup> Edition
                 </p>
               </div>
               <div className="slider-value">
@@ -114,6 +130,9 @@ const Sliders = (props: any) => {
                 <input type="text" value={reddySliderValue[1]} readOnly />
               </div>
             </div>
+            <p style={{ textAlign: "center", fontWeight: "bold", margin: 0 }}>
+              Essentials of forensic medicine and toxicology
+            </p>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -129,17 +148,25 @@ const Sliders = (props: any) => {
                 <input type="text" value={swapnilSliderValue[0]} readOnly />
               </div>
               <div className="slider-name">
-                <p style={{ fontWeight: "bold" }}>Swapnil Sir</p>
+                <p
+                  style={{ textAlign: "center", fontWeight: "bold", margin: 0 }}
+                >
+                  Swapnil S. Agarwal
+                  <br />1<sup>st</sup> Edition
+                </p>
               </div>
               <div className="slider-value">
                 <label>Max Age:</label>
                 <input type="text" value={swapnilSliderValue[1]} readOnly />
               </div>
             </div>
+            <p style={{ textAlign: "center", fontWeight: "bold", margin: 0 }}>
+              Legal medicine manual
+            </p>
           </Card.Text>
         </Card.Body>
       </Card>
-      <Card
+      {/* <Card
         className="slider-card"
         style={{ width: "26rem", backgroundColor: "#f1f1f2" }}
       >
@@ -162,7 +189,7 @@ const Sliders = (props: any) => {
             </div>
           </Card.Text>
         </Card.Body>
-      </Card>
+      </Card> */}
     </div>
   );
 };

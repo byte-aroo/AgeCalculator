@@ -1320,6 +1320,35 @@ export function getAnswersRange() {
         }
       }
     }
+    if (hipAnswers[6]) {
+      if (hipAnswers[6] === "Not fused") {
+        if (!ranges["agarwalMax"] || Number(ranges["agarwalMax"]) > 25) {
+          ranges["agarwalMax"] = 25;
+        }
+        if (!ranges["reddyMax"] || Number(ranges["reddyMax"]) > 25) {
+          ranges["reddyMax"] = 25;
+        }
+        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 25) {
+          ranges["swapnilMax"] = 25;
+        }
+        if (!ranges["mukherjeeMax"] || Number(ranges["mukherjeeMax"]) > 25) {
+          ranges["mukherjeeMax"] = 25;
+        }
+      } else if (hipAnswers[6] === "Fused") {
+        if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 21) {
+          ranges["agarwalMin"] = 21;
+        }
+        if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) < 21) {
+          ranges["reddyMin"] = 21;
+        }
+        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 21) {
+          ranges["swapnilMin"] = 21;
+        }
+        if (!ranges["mukherjeeMin"] || Number(ranges["mukherjeeMin"]) < 21) {
+          ranges["mukherjeeMin"] = 21;
+        }
+      }
+    }
   }
 
   if (ankleAnswers) {

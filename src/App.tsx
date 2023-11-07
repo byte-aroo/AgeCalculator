@@ -17,34 +17,40 @@ function App() {
 
   const resourceTeam = [
     {
+      id: "swapnil",
+      name: "Dr Swapnil Agarwal",
+      email: "swapnil@charutarhealth.org",
+      phone: "9824477874",
+    },
+    {
       id: "arijit",
       name: "Dr Arijit Dutta",
       email: "arijitdutta@gmail.com",
-      phone: "1234567890",
+      phone: "9739413645",
     },
     {
       id: "darshan",
       name: "Dr Darshan Galoria",
       email: "darshangaloria@gmail.com",
-      phone: "1234567890",
+      phone: "9898058849",
     },
     {
       id: "dhara",
       name: "Dr Dhara D. Goswami",
       email: "dharadgoswami@gmail.com",
-      phone: "1234567890",
+      phone: "7778062041",
     },
     {
       id: "pradip",
       name: "Dr Pradip Rana",
       email: "pradiprana@gmail.com",
-      phone: "1234567890",
+      phone: "9586046025",
     },
     {
       id: "srushti",
       name: "Dr Srushti Shukla",
       email: "srushtishukla@gmail.com",
-      phone: "1234567890",
+      phone: "9825847454",
     },
   ];
 

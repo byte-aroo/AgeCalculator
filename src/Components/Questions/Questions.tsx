@@ -27,25 +27,29 @@ const Questions = (props:any) => {
 
   return (
     <div className="questions-wrapper">
+      <p style={{ textAlign: "center", fontWeight: "bold" }}>
+        {" "}
+        Disclaimer: This application can measure the age between "0-25 years"{" "}.
+      </p>
       <div className="questions-card">
         {currentIndex === 0 ? (
-          <ShoulderQues reset={props.reset}/>
+          <ShoulderQues reset={props.reset} />
         ) : currentIndex === 1 ? (
-          <ElbowQues reset={props.reset}/>
+          <ElbowQues reset={props.reset} />
         ) : currentIndex === 2 ? (
-          <WristQues reset={props.reset}/>
+          <WristQues reset={props.reset} />
         ) : currentIndex === 3 ? (
-          <HipQues reset={props.reset}/>
+          <HipQues reset={props.reset} />
         ) : currentIndex === 4 ? (
-          <KneeQues reset={props.reset}/>
+          <KneeQues reset={props.reset} />
         ) : currentIndex === 5 ? (
-          <AnkleQues reset={props.reset}/>
+          <AnkleQues reset={props.reset} />
         ) : currentIndex === 6 ? (
-          <DentalTemp reset={props.reset}/>
+          <DentalTemp reset={props.reset} />
         ) : currentIndex === 7 ? (
-          <DentalPerm reset={props.reset}/>
+          <DentalPerm reset={props.reset} />
         ) : (
-          <ShoulderQues reset={props.reset}/>
+          <ShoulderQues reset={props.reset} />
         )}
       </div>
 
@@ -55,7 +59,7 @@ const Questions = (props:any) => {
 
           {itemList.map((item: any, index) => (
             <Pagination.Item
-            key={index}
+              key={index}
               activeLabel=""
               active={currentIndex === index ? true : false}
               onClick={() => handleIndex(index)}
