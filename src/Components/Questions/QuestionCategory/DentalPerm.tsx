@@ -34,7 +34,7 @@ const DentalPerm = (props:any) => {
     },
     {
       question: "Space for third molar",
-      options: ["Appeared", "Not appeared"],
+      options: ["Present", "Absent"],
     },
     {
         question: "3rd molar",
@@ -85,7 +85,7 @@ const DentalPerm = (props:any) => {
             className="mb-2 text-muted card-sub-title"
             style={{ fontSize: "1.2rem" }}
           >
-            Permaneny Tooth 
+            Permanent Tooth 
           </Card.Subtitle>
           <Card.Text className="card-questions">
             {questions.map((questionData, questionIndex) => (

@@ -96,8 +96,8 @@ export function getAnswersRange() {
     }
     if (shoulderAnswers[1]) {
       if (shoulderAnswers[1] === "Not appeared") {
-        if (!ranges["agarwalMax"] || Number(ranges["agarwalMax"]) > 1) {
-          ranges["agarwalMax"] = 1;
+        if (!ranges["agarwalMax"] || Number(ranges["agarwalMax"]) > 11) {
+          ranges["agarwalMax"] = 11;
         }
         if (!ranges["mukherjeeMax"] || Number(ranges["mukherjeeMax"]) > 11) {
           ranges["mukherjeeMax"] = 11;
@@ -105,12 +105,12 @@ export function getAnswersRange() {
         if (!ranges["reddyMax"] || Number(ranges["reddyMax"]) > 11) {
           ranges["reddyMax"] = 11;
         }
-        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 11) {
-          ranges["swapnilMax"] = 11;
+        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 12) {
+          ranges["swapnilMax"] = 12;
         }
       } else if (shoulderAnswers[1] === "Appeared but not fused") {
-        if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 1) {
-          ranges["agarwalMin"] = 1;
+        if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 11) {
+          ranges["agarwalMin"] = 11;
         }
         if (!ranges["agarwalMax"] || Number(ranges["agarwalMax"]) > 15) {
           ranges["agarwalMax"] = 15;
@@ -221,8 +221,8 @@ export function getAnswersRange() {
         if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 1) {
           ranges["agarwalMin"] = 1;
         }
-        if (!ranges["agarwalMax"] || Number(ranges["agarwalMax"]) > 6) {
-          ranges["agarwalMax"] = 6;
+        if (!ranges["agarwalMax"] || Number(ranges["agarwalMax"]) > 18) {
+          ranges["agarwalMax"] = 18;
         }
         if (!ranges["mukherjeeMin"] || Number(ranges["mukherjeeMin"]) < 1) {
           ranges["mukherjeeMin"] = 1;
@@ -239,12 +239,12 @@ export function getAnswersRange() {
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 1) {
           ranges["swapnilMin"] = 1;
         }
-        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 5) {
-          ranges["swapnilMax"] = 5;
+        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 18) {
+          ranges["swapnilMax"] = 18;
         }
       } else if (shoulderAnswers[3] === "Fused") {
-        if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 6) {
-          ranges["agarwalMin"] = 6;
+        if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 18) {
+          ranges["agarwalMin"] = 18;
         }
         if (!ranges["mukherjeeMin"] || Number(ranges["mukherjeeMin"]) < 14) {
           ranges["mukherjeeMin"] = 14;
@@ -252,8 +252,8 @@ export function getAnswersRange() {
         if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) < 18) {
           ranges["reddyMin"] = 18;
         }
-        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 5) {
-          ranges["swapnilMin"] = 5;
+        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 18) {
+          ranges["swapnilMin"] = 18;
         }
       }
     }
@@ -287,8 +287,8 @@ export function getAnswersRange() {
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 3) {
           ranges["swapnilMin"] = 3;
         }
-        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 19) {
-          ranges["swapnilMax"] = 19;
+        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 6) {
+          ranges["swapnilMax"] = 6;
         }
       } else if (shoulderAnswers[4] === "Fused") {
         if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 6) {
@@ -298,8 +298,8 @@ export function getAnswersRange() {
           ranges["mukherjeeMin"] = 2;
         }
 
-        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 19) {
-          ranges["swapnilMin"] = 19;
+        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 6) {
+          ranges["swapnilMin"] = 6;
         }
       }
     }
@@ -333,8 +333,8 @@ export function getAnswersRange() {
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 5) {
           ranges["swapnilMin"] = 5;
         }
-        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 19) {
-          ranges["swapnilMax"] = 19;
+        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 6) {
+          ranges["swapnilMax"] = 6;
         }
       } else if (shoulderAnswers[5] === "Fused") {
         if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 6) {
@@ -344,8 +344,8 @@ export function getAnswersRange() {
           ranges["mukherjeeMin"] = 5;
         }
 
-        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 19) {
-          ranges["swapnilMin"] = 19;
+        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 6) {
+          ranges["swapnilMin"] = 6;
         }
       }
     }
@@ -1149,8 +1149,8 @@ export function getAnswersRange() {
         if (!ranges["agarwalMax"] || Number(ranges["agarwalMax"]) > 15) {
           ranges["agarwalMax"] = 15;
         }
-        if (!ranges["mukherjeeMin"] || Number(ranges["mukherjeeMin"]) < 16) {
-          ranges["mukherjeeMin"] = 16;
+        if (!ranges["mukherjeeMax"] || Number(ranges["mukherjeeMax"]) > 16) {
+          ranges["mukherjeeMax"] = 16;
         }
 
         if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) < 13) {
@@ -1159,8 +1159,8 @@ export function getAnswersRange() {
         if (!ranges["reddyMax"] || Number(ranges["reddyMax"]) > 15) {
           ranges["reddyMax"] = 15;
         }
-        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 15) {
-          ranges["swapnilMin"] = 15;
+        if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 15) {
+          ranges["swapnilMax"] = 15;
         }
       } else if (hipAnswers[2] === "Fused") {
         if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 15) {
@@ -1499,6 +1499,7 @@ export function getAnswersRange() {
   }
 
   if (dentalTempAnswers) {
+    /*
     if (dentalTempAnswers[0]) {
       if (dentalTempAnswers[0] === "Appeared") {
         if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 6) {
@@ -1613,22 +1614,23 @@ export function getAnswersRange() {
         }
       }
     }
-    if (dentalTempAnswers[6]) {
-      if (dentalTempAnswers[6] === "Appeared") {
-        if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 24) {
-          ranges["agarwalMin"] = 24;
+    */
+    if (dentalTempAnswers[0]) {
+      if (dentalTempAnswers[0] === "Appeared") {
+        if (!ranges["agarwalMin"] || Number(ranges["agarwalMin"]) < 2) {
+          ranges["agarwalMin"] = 2;
         }
-        if (!ranges["mukherjeeMin"] || Number(ranges["mukherjeeMin"]) < 20) {
-          ranges["mukherjeeMin"] = 20;
+        if (!ranges["mukherjeeMin"] || Number(ranges["mukherjeeMin"]) < 2) {
+          ranges["mukherjeeMin"] = 2;
         }
-        if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) < 20) {
-          ranges["reddyMin"] = 20;
+        if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) < 2) {
+          ranges["reddyMin"] = 2;
         }
-        if (!ranges["nanddyMin"] || Number(ranges["nanddyMin"]) < 20) {
-          ranges["nanddyMin"] = 20;
+        if (!ranges["nanddyMin"] || Number(ranges["nanddyMin"]) < 2) {
+          ranges["nanddyMin"] = 2;
         }
-        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 20) {
-          ranges["swapnilMin"] = 20;
+        if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 2) {
+          ranges["swapnilMin"] = 2;
         }
       }
     }
@@ -1769,7 +1771,7 @@ export function getAnswersRange() {
       }
     }
     if (dentalPermAnswers[7]) {
-      if (dentalPermAnswers[7] === "Appeared") {
+      if (dentalPermAnswers[7] === "Present") {
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 14) {
           ranges["swapnilMin"] = 14;
         }

@@ -6,7 +6,7 @@ import { getAnswersRange } from "../answers";
 const ShoulderQues = (props: any) => {
   const questions = [
     {
-      question: "Medial end of clavivle",
+      question: "Medial end of clavicle",
       options: ["Not appeared", "Appeared but not fused", "Fused"],
     },
     {

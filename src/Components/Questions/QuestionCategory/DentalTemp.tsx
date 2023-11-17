@@ -4,30 +4,30 @@ import { BsCaretRightFill } from "react-icons/bs";
 import { getAnswersRange } from "../answers";
 const DentalTemp = (props:any) => {
   const questions = [
-    {
-      question: "Central incisor(Lower)",
-      options: ["Appeared", "Not appeared"],
-    },
-    {
-      question: "Central Incisor(Upper)",
-      options: ["Appeared", "Not appeared"],
-    },
-    {
-      question: "Lateral Incisor(Upper)",
-      options: ["Appeared", "Not appeared"],
-    },
-    {
-      question: "Lateral Incisor (Lower)",
-      options: ["Appeared", "Not appeared"],
-    },
-    {
-      question: "1st temporary molar",
-      options: ["Appeared", "Not appeared"],
-    },
-    {
-      question: "Canines",
-      options: ["Appeared", "Not appeared"],
-    },
+    // {
+    //   question: "Central incisor(Lower)",
+    //   options: ["Appeared", "Not appeared"],
+    // },
+    // {
+    //   question: "Central Incisor(Upper)",
+    //   options: ["Appeared", "Not appeared"],
+    // },
+    // {
+    //   question: "Lateral Incisor(Upper)",
+    //   options: ["Appeared", "Not appeared"],
+    // },
+    // {
+    //   question: "Lateral Incisor (Lower)",
+    //   options: ["Appeared", "Not appeared"],
+    // },
+    // {
+    //   question: "1st temporary molar",
+    //   options: ["Appeared", "Not appeared"],
+    // },
+    // {
+    //   question: "Canines",
+    //   options: ["Appeared", "Not appeared"],
+    // },
     {
       question: "2nd temporary molar",
       options: ["Appeared", "Not appeared"],
