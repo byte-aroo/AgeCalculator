@@ -618,7 +618,9 @@ export function getAnswersRange() {
         if (!ranges["agarwalMax"] || Number(ranges["agarwalMax"]) > 1) {
           ranges["agarwalMax"] = 1;
         }
-
+        if (!ranges["reddyMax"] || Number(ranges["reddyMax"]) > 1) {
+          ranges["reddyMax"] = 1;
+        }
         if (!ranges["swapnilMax"] || Number(ranges["swapnilMax"]) > 1) {
           ranges["swapnilMax"] = 1;
         }
@@ -627,8 +629,11 @@ export function getAnswersRange() {
           ranges["agarwalMin"] = 1;
         }
 
-        if (!ranges["reddyMax"] || Number(ranges["reddyMax"]) > 1) {
-          ranges["reddyMax"] = 1;
+        if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) < 1) {
+          ranges["reddyMin"] = 1;
+        }
+        if (!ranges["reddyMax"] || Number(ranges["reddyMax"]) > 16) {
+          ranges["reddyMax"] = 16;
         }
 
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 1) {
@@ -638,8 +643,8 @@ export function getAnswersRange() {
           ranges["swapnilMax"] = 16;
         }
       } else if (elbowAnswers[5] === "Fused") {
-        if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) < 1) {
-          ranges["reddyMin"] = 1;
+        if (!ranges["reddyMin"] || Number(ranges["reddyMin"]) < 14) {
+          ranges["reddyMin"] = 14;
         }
 
         if (!ranges["swapnilMin"] || Number(ranges["swapnilMin"]) < 14) {
